@@ -1,0 +1,12 @@
+UNDER DEVELOPMENT
+-works-
+
+
+
+Issues/to-do:
+
+1. Mahout result is gibberish: there is a bug in mahout k-means clustering that returns NULL, which gives incorrect EuclideanDistanceMeasure
+	-fix: need to install patch
+	-note: also applies to Query 26
+2. The splitting takes place on 1 node as things stand right now; would like to spread the task across the cluster. Takes impossibly long right now!
+3. mahout output needs to be formatted to specification

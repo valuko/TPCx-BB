@@ -1,0 +1,3 @@
+A number of Big Data Benchmark for BigBench Specification queries are derived from TPC-DS and as such are not comparable to a published TPC-DS result.
+
+This kit contains a restricted version of the Parallel Data Generation Framework (PDGF), which is used to generate the benchmark data set. PDGF is a product of bankmark UG (haftungsbeschraenkt). License terms for PDGF can be found in the data generator location.

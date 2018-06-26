@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+
+#
+# Copyright (C) 2016 Transaction Processing Performance Council (TPC) and/or
+# its contributors.
+#
+# This file is part of a software package distributed by the TPC.
+#
+# The contents of this file have been developed by the TPC, and/or have been
+# licensed to the TPC under one or more contributor license agreements.
+#
+#  This file is subject to the terms and conditions outlined in the End-User
+#  License Agreement (EULA) which can be found in this distribution (EULA.txt)
+#  and is available at the following URL:
+#  http://www.tpc.org/TPC_Documents_Current_Versions/txt/EULA.txt
+#
+# Unless required by applicable law or agreed to in writing, this software
+# is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+# ANY KIND, either express or implied, and the user bears the entire risk as
+# to quality and performance as well as the entire cost of service or repair
+# in case of defect.  See the EULA for more details.
+#
+
+#
+#Copyright 2015 Intel Corporation All Rights Reserved. 
+#
+#The source code contained or described herein and all documents related to the source code ("Material") are owned by Intel Corporation or its suppliers or licensors. Title to the Material remains with Intel Corporation or its suppliers and licensors. The Material contains trade secrets and proprietary and confidential information of Intel or its suppliers and licensors. The Material is protected by worldwide copyright and trade secret laws and treaty provisions. No part of the Material may be used, copied, reproduced, modified, published, uploaded, posted, transmitted, distributed, or disclosed in any way without Intel's prior express written permission.
+#
+#No license under any patent, copyright, trade secret or other intellectual property right is granted to or conferred upon you by disclosure or delivery of the Materials, either expressly, by implication, inducement, estoppel or otherwise. Any license under such intellectual property rights must be express and approved by Intel in writing.
+
+populateMetastore () {
+  # make sure that this method stops when an error occured
+  BIG_BENCH_STOP_AFTER_FAILURE="1"
+
+  #runCmdWithErrorCheck "$BIG_BENCH_BIN_DIR/bigBench" cleanMetastore $LIST_OF_USER_OPTIONS
+  #"$BIG_BENCH_BIN_DIR/bigBench" cleanMetastore $LIST_OF_USER_OPTIONS
+  runCmdWithErrorCheck runEngineCmd -f "$BIG_BENCH_POPULATE_METASTORE_FILE"
+
+  runCmdWithErrorCheck hadoop fs -mkdir -p "$BIG_BENCH_HDFS_ABSOLUTE_TEMP_DIR"
+  runCmdWithErrorCheck hadoop fs -mkdir -p "$BIG_BENCH_HDFS_ABSOLUTE_QUERY_RESULT_DIR"
+  runCmdWithErrorCheck hadoop fs -chmod ugo+rw "$BIG_BENCH_HDFS_ABSOLUTE_TEMP_DIR"
+  runCmdWithErrorCheck hadoop fs -chmod ugo+rw "$BIG_BENCH_HDFS_ABSOLUTE_QUERY_RESULT_DIR"
+}
+
+helpModule () {
+  echo "This module populates the metastore with the tables for the generated dataset"
+  echo
+  echo "Options:"
+  echo -e "-d\tdatabase to use"
+  echo -e "-h\tshow this help"
+  echo
+  echo "INTERNAL options:"
+  echo -e "-v\tsql script for metastore population"
+  echo -e "-z\tfile with user defined engine settings"
+}
+
+runModule () {
+  echo "==============================================="
+  echo "Adding/Updating generated files to hive metastore"
+  echo "==============================================="
+
+  local LOG_FILE_EXEC_TIMES="${BIG_BENCH_LOGS_DIR}/times.csv"
+  if [ ! -e "$LOG_FILE_EXEC_TIMES" ]
+  then
+    touch "$LOG_FILE_EXEC_TIMES"
+    echo "STARTDATE_EPOCH|STOPDATE_EPOCH|DURATION_MS|STARTDATE|STOPDATE|DURATION|QUERY|SCALE_FACTOR|BENCHMARK_PHASE|STREAM|SUCCESSFUL|EXIT_CODE|HAS_RESULT|HDFS_SIZE" >> "${LOG_FILE_EXEC_TIMES}"
+  fi
+
+  if [ ! -w "$LOG_FILE_EXEC_TIMES" ]
+  then
+    echo "ERROR: cannot write to: $LOG_FILE_EXEC_TIMES, no permission"
+    return 1
+  fi
+
+   #-- time measurement of exectuion
+  local STARTDATE="`date +%Y/%m/%d:%H:%M:%S`"
+  local STARTDATE_EPOCH="`date +%s`" # seconds since epoch
+
+  # Run the main method
+  populateMetastore 2>&1 | tee -a "$BIG_BENCH_LOADING_STAGE_LOG" 2>&1
+  local EXIT_CODE=${PIPESTATUS[0]}
+
+  if [ "$EXIT_CODE" -eq 0 ]
+  then
+    local successOrFail="SUCCESS"
+  else
+    local successOrFail="FAILED"
+  fi
+
+  local STOPDATE="`date +%Y/%m/%d:%H:%M:%S`"
+  local STOPDATE_EPOCH="`date +%s`" # seconds since epoch
+  local DIFF_s="$(($STOPDATE_EPOCH - $STARTDATE_EPOCH))"
+  local DIFF_ms="$(($DIFF_s * 1000))"
+  local DURATION="$(($DIFF_s / 3600 ))h $((($DIFF_s % 3600) / 60))m $(($DIFF_s % 60))s"
+
+  echo "======= Load data into hive time =========" | tee -a "$BIG_BENCH_LOADING_STAGE_LOG" 2>&1
+  echo "Start timestamp: $STARTDATE $STARTDATE_EPOCH" | tee -a "$BIG_BENCH_LOADING_STAGE_LOG" 2>&1
+  echo "Stop  timestamp: $STOPDATE $STOPDATE_EPOCH" | tee -a "$BIG_BENCH_LOADING_STAGE_LOG" 2>&1
+  echo "Duration:  $DURATION" | tee -a "$BIG_BENCH_LOADING_STAGE_LOG" 2>&1
+  echo "----- result -----" | tee -a "$BIG_BENCH_LOADING_STAGE_LOG" 2>&1
+
+  echo "Load data ${successOrFail} exit code: ${EXIT_CODE}" | tee -a "$BIG_BENCH_LOADING_STAGE_LOG" 2>&1 
+  echo "${STARTDATE_EPOCH}|${STOPDATE_EPOCH}|${DIFF_ms}|${STARTDATE}|${STOPDATE}|${DURATION}|Load data|${BIG_BENCH_SCALE_FACTOR}|Load data|${BIG_BENCH_STREAM_NUMBER}|${successOrFail}|${EXIT_CODE}||" >> "${LOG_FILE_EXEC_TIMES}"
+
+  echo "time&status: ${LOG_FILE_EXEC_TIMES}" | tee -a "$BIG_BENCH_LOADING_STAGE_LOG" 2>&1
+  echo "full log: $BIG_BENCH_LOADING_STAGE_LOG" | tee -a "$BIG_BENCH_LOADING_STAGE_LOG" 2>&1
+  echo "===========================" | tee -a "$BIG_BENCH_LOADING_STAGE_LOG" 2>&1
+
+  return "${EXIT_CODE}"
+}

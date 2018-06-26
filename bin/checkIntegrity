@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+#
+# Copyright (C) 2016 Transaction Processing Performance Council (TPC) and/or
+# its contributors.
+#
+# This file is part of a software package distributed by the TPC.
+#
+# The contents of this file have been developed by the TPC, and/or have been
+# licensed to the TPC under one or more contributor license agreements.
+#
+#  This file is subject to the terms and conditions outlined in the End-User
+#  License Agreement (EULA) which can be found in this distribution (EULA.txt)
+#  and is available at the following URL:
+#  http://www.tpc.org/TPC_Documents_Current_Versions/txt/EULA.txt
+#
+# Unless required by applicable law or agreed to in writing, this software
+# is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+# ANY KIND, either express or implied, and the user bears the entire risk as
+# to quality and performance as well as the entire cost of service or repair
+# in case of defect.  See the EULA for more details.
+#
+
+#
+#Copyright 2015 Intel Corporation All Rights Reserved.
+#
+#The source code contained or described herein and all documents related to the source code ("Material") are owned by Intel Corporation or its suppliers or licensors. Title to the Material remains with Intel Corporation or its suppliers and licensors. The Material contains trade secrets and proprietary and confidential information of Intel or its suppliers and licensors. The Material is protected by worldwide copyright and trade secret laws and treaty provisions. No part of the Material may be used, copied, reproduced, modified, published, uploaded, posted, transmitted, distributed, or disclosed in any way without Intel's prior express written permission.
+#
+#No license under any patent, copyright, trade secret or other intellectual property right is granted to or conferred upon you by disclosure or delivery of the Materials, either expressly, by implication, inducement, estoppel or otherwise. Any license under such intellectual property rights must be express and approved by Intel in writing.
+
+helpModule () {
+  echo "This module prints out which files have been changed in the kit"
+  echo "WARNING: A precondition of this module is that the file containing the hash sums is THRUSTWORTHY."
+  echo
+  echo "Options:"
+  echo -e "-h\tshow this help"
+}
+
+runModule () {
+  HASH_FILENAME="bigbench.sha256"
+  ORIGINAL_HASH_FILE="$BIG_BENCH_HOME/$HASH_FILENAME"
+  TEMP_FILE="/tmp/$HASH_FILENAME"
+
+  echo
+  echo "*** Searching for file containing hashes ***"
+  echo
+
+  if [ -f "$ORIGINAL_HASH_FILE" ]
+  then
+    echo "Found file containing hashes: $ORIGINAL_HASH_FILE"
+    echo "This file is considered thrustworthy. MAKE SURE THAT THIS FILE WAS NOT CHANGED!"
+  else
+    echo "Unable to check the file integrity: Original hash file $ORIGINAL_HASH_FILE not found"
+    return 1
+  fi
+
+  echo
+  echo "*** Hashing kit files ***"
+  echo
+
+  cd "$BIG_BENCH_HOME"
+  # ignore .git directory and bigbench.sha256 file, hash all other files
+  find ./ -type d \( -name '.?*' -o -name logs \) -prune -o -type f ! -name "$HASH_FILENAME" -exec sha256sum {} \; > "$TEMP_FILE"
+  cd "$OLDPWD"
+
+  echo
+  echo "*** Printing differences between hash files ***"
+  echo
+
+  if diff "$ORIGINAL_HASH_FILE" "$TEMP_FILE"
+  then
+    echo
+    echo "*** No files of the kit were changed ***"
+    echo
+    rm -rf "$TEMP_FILE"
+  else
+    echo
+    echo "*** The above files of the kit were changed ***"
+    echo
+  fi
+}

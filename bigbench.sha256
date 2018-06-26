@@ -1,0 +1,672 @@
+0a392dd1c9be0d4cb5c3a85c66f063d1dd2ef258a219420c58f4d5257c41c995  ./SOFTWARE_LICENSE_AGREEMENT.txt
+d38a6edc1c612b615fc4176be9b5367f73451f238b3c13da48dc666edfa0b740  ./conf/userSettings.conf
+cbdde4ef988a8a274c1adac2de5ae0923254f7582868b5153dd6fd2ca48f5e93  ./conf/bigBench.properties
+103468a65ab0920600198457762c72b4af6028a8a033ddee71fb3a2dee683f62  ./TPCx-BB_v1.2.0.pdf
+4f7d685dc7cfe1507009d11f531217dc1dd7d18f473f32909e3dc182bd68d5f4  ./User_Guide.md
+15b53074cdec9484ed9b8a0175a323b7f61be8afecabc03e501cdcdebb4b6f47  ./THIRD_PARTY_NOTICE.txt
+04273b34262cfc9cf3a376afffa8bc0ad952d0ce9c3bcbca593db889409dbdf7  ./bin/runBenchmark
+70fbd7c80fae98dfcf7bff6c140740a313ec1e34295eb6b8359e8920c8ac3952  ./bin/TPCxBB_Benchmarkrun.sh
+d1766e9a800697d4e43a738363cc1a5f2914388956e50a2e0737f8e5486816f1  ./bin/zipLogs
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./bin/.gitignore
+47534f489211a88f700ae598de41933e8ad4b9d5a782b5445d53df7e2957b0d3  ./bin/cleanLogs
+aceb0e2b4c8274ec0a70064db70858b76f4f7e3a9458689572feedce4b508920  ./bin/killAllHadoopJobs.sh
+6520747b6629844d4e604d3c7e73c7206a97751bbfdacc08fc51ceb829e29ac0  ./bin/checkIntegrity
+0021ad4321cfc01fd7950430d82b589a7023adc8c999aa845058728b61d0125f  ./bin/getEnvInfo.sh
+e5b593c3b2fcc7df0847580c63d87360696cb78ca3ade44d89e0992ef3f7a25b  ./bin/TPCxBB_Validation.sh
+f700b1c463d2b8c8945110f6e5b2a148e6d80c967fa78c655054487de76ca976  ./bin/bigBench
+6a72afb753978696cd40e670e0f127ba0ca892c086f0b81e805fb8592e129b12  ./bin/logEnvInformation
+c05e32196ffb398cae0562e8548e8354875e6a0398593685ed5abb66b9bce037  ./tools/HadoopClusterExec.jar
+6fb6101ed9547406379f049470274be86422eec927583b532ac10580de1126b9  ./tools/RunBigBench.jar
+117bed406f2b4180332e202db7b785f2dab2070c4518f70eb624fac2602f5b1f  ./data-generator/Log4j.xml
+632ee9c0b65d1713de76089eadc399b54fe923f549c2743b7edd1b77f0361108  ./data-generator/LICENSE.txt
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./data-generator/.gitignore
+c091bbfb4ab7eb7ae570ad2c37c104d6552abad6662754336ae7bc1dcca15a0b  ./data-generator/THIRD-PARTY-LICENSE.txt
+1ae89851301b2911f4ee0167df807ded2caf624adca3d49bdbaab74b5dcdfb95  ./data-generator/dicts/mail_provider.dict
+c1a0f116e970014c2af04cfcf9acb6a6be14d418691ba1df1e1e46b877a55e4d  ./data-generator/dicts/pseudoTextGenerator/terminators.dict
+e01d94e261ce5ebc5f226e6d330cadc6c1a850f61a7b8d6aa72f33c526b7be91  ./data-generator/dicts/pseudoTextGenerator/adjectives.dict
+66e5bbc43142edc7555b0af3ec73187d85d508c03625499195aad77f20b53d21  ./data-generator/dicts/pseudoTextGenerator/PseudoTextGenerator.properties
+6324efecb6daeae33108c19543af3e3eb2ebf762cec8e23a4127cfb521d3eb16  ./data-generator/dicts/pseudoTextGenerator/nouns.dict
+8822ebd6a45e4058211525fa9b2f00d6d5a571c35dc218bbff88e7f27a60796b  ./data-generator/dicts/pseudoTextGenerator/verbs.dict
+88d66d692a6d0d00e89588019df727e0e7816e79e245eca76a006b26e020012f  ./data-generator/dicts/pseudoTextGenerator/adverbs.dict
+4e32dfad41720797e87b748962a8ff4b7732538ff1cb994892c44c03cf641062  ./data-generator/dicts/pseudoTextGenerator/prepositions.dict
+4bf06e53ea97dcdf7eff3018b602c17ba3f850d763d7c2b72472884165beede6  ./data-generator/dicts/pseudoTextGenerator/auxiliaries.dict
+f59427eee472b65add4a3ce66adb98f863f9dd0534c0a5e3e366c7e876cd3742  ./data-generator/dicts/male.dict
+d914ad4ecdfe11a6380108e024437ef42362eed63462131c228086cbbd9611c5  ./data-generator/dicts/female.dict
+941914f428e68aa6b2b55bb8453d543af8adcc1e85350451567c6ca659b76bda  ./data-generator/dicts/usernames.dict
+e97ae761adfe756a446eff4d0b4a9771d9925c5f8dfe5ca2f67b4353f489c77d  ./data-generator/dicts/county.dict
+0699663ed5f0a6119029597d45e8dc9cf5a5eee0af6e13f56d0f3208b986c1d6  ./data-generator/dicts/country.dict
+c281e5e989cfac8fadd3b707bec1d9133430429a4d2fe98d0ec08b4a6fa9888d  ./data-generator/dicts/lastnames.dict
+a635998be5be60a9cd793d47ed26942d43baaa6a77b5cf748481780f88e68499  ./data-generator/dicts/state.dict
+c9f721190914b95a2bb6e88af54ebcda8b6f5a73570c3c0e9b5ed3054cbdf601  ./data-generator/dicts/state_abbreviation.dict
+5c42bc1ee7c0f077f9543054e13ab703584efbf60a3d1fa32066dff755d059b3  ./data-generator/dicts/weekdays.dict
+9834b3866292c0ad6b706a4eb1e69c9d39106752606505854a8dc7ffd7862d7b  ./data-generator/dicts/bigbench/categoriesWeightedList.txt
+eefe56bf8d1b37ba191052f9d75fc9234e9c1aefe65069d5483f6176765a57b8  ./data-generator/dicts/bigbench/categories-old.dict
+c4217165f1f632b0898644b3b0a13e4e20b2bcbc247ddfb4e675fd752b45ccd8  ./data-generator/dicts/bigbench/ds-genProbabilities.txt
+8f315f3e09bccc1e209c6cd11aa75838471381082d633991d2713d5e26cbafa8  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Classical_5.bin
+ca48be208991af1cef50552e30505baa65e75aae27cffb12eed49b6c1b9261e0  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Furniture_4.bin
+0b1decf4b5131808f43a35393ba789f9bf62516604e21b1e9fea90d4b9d6e564  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Animals & Figures_3.bin
+bc0b690563e99d368f3d2339a519d8673410c4f67e75adaca01778d483117bca  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Hard Rock & Metal_2.bin
+e4352496fa8757119c8cb6bf10c20c0400b5199db5f3f05c188e315badde5032  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Tops & Tees_2.bin
+bda6d92b9a38ef80f0ecd9ea1239eb1c1daffde6605f7fbf7c481f1a549cf091  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Camera & Photo_3.bin
+e02826c3649ff114952ddf905c85458959d17f7c9e85f39289f34cfdb6c5f7cb  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Kitchen & Dining_2.bin
+b36d3716087f6cb8a7de8030c0bda4f62e8afc7b231d1d9cb90e94f5090d0060  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Hobbies_2.bin
+ddea266b527a7d862d62724a037186ec273976423de1b92942bae7ef0342ef85  ./data-generator/dicts/bigbench/reviews-markovchains/Music_World Music_2.bin
+e2b56764e2716fef6d1668ce21b75e23d9f03bef57290d071c8d8bdc5b2ce984  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computer Components_2.bin
+1433e1dc927d25f5385dcb95dd3eb4a6adbe46c26196926b0dd7657a33cdfa78  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Games_5.bin
+5ceca17b0ed66fdb59a0a7c06904e5b0ffc1d0535d8af556b6dab2490a9e7d01  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power & Hand Tools_2.bin
+45bc3f796c48b56c03a561f2328fb2779e3e4483bd684aa60d13378bdb3347b0  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Animals & Figures_1.bin
+2f2bedd3b31a3c0c9ee8de941a846b73291dc2c619dd7bd4311a7eac480f8276  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Audio & Video Accessories_1.bin
+080fc78b34531c30fb1ef64c476b3ee56dcde9e37307c034db0b72689afe7a5d  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Pop_5.bin
+52734e817c32de9ad9e1d94c902b7c70cfe80b83d3eb6c2d35c2951d5d289c40  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Learning & Education_1.bin
+d14ab25c62056363f4c863e46e6524ab8a7475309c7df9417f63dec386325148  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computers & Accessories_2.bin
+faf2dae8d5408397be085b313020a1dee7353f53629d80171ba69982d233782a  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computer Accessories_1.bin
+bd9a2b00deac999683a2acb77f74fbfff3cff0392ec2ea55519c3a6b658fca4e  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Alternative Rock_1.bin
+d488bb84ad8eb37cec5879cb1c5fdc1ff97dfd288beecbb48b0e148849583e92  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Team Sports_2.bin
+e68fbf62edeffb04c69c495c025604c94a7a5b70cfa1ab7d287d214bcc1c8729  ./data-generator/dicts/bigbench/reviews-markovchains/Music_R&B_1.bin
+7546ab9e1aa921cd443bafa7a7bcdc556c7aca06bca92b64f25be0a343df2e51  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Rock_5.bin
+2f203e503237a28834dfa1e98860b2218980979ff71a8fa2f2abb70a7450c636  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Novelty & Special Use_4.bin
+8d9bc2971ef449061047638647713b4265f63976c9d1cb9a0e0e4eee247ddcbd  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Accessories & Supplies_1.bin
+027ff4bbac781e14aa7f26f04cf7a081bb16f0041b35f18bdbc00f9e63187cbb  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Outdoor Recreation_4.bin
+35287b5422e37c8a79d200a6b8e4ad1dfeb960db3a5435c41c9d1cbb1c4c17ec  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Action & Toy Figures_4.bin
+45c977693ec328331c90da1312c23f76535852bc550657e951079143ee1d6b1c  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Intimates_3.bin
+450096067a9cbe7987b689bbc888b175d9c3f9ab80b777c5716d97c8f3f8bc6b  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Boating & Water Sports_2.bin
+aa43de1c6a845cb5d27362a8cd519671a760c556049d52135a882d9bf08ecc20  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Men_2.bin
+e7dd1dea1aa877357d0102788b564a33a72c76ec83e21942c27e446454689c0b  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Camping & Hiking_3.bin
+cae20d6391b3c55621246834dd4c49e01e7cf5de258f1beca5bdcb10cbb35cc2  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Jazz_5.bin
+4eed9b18bbcdcea1083aa5003cabdec199f6f96dcc3ffddcbb885d2ea31bc046  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Camera & Photo_5.bin
+424ce0293984de69f592a5b87833f4e74ebaeb6cdd266432a9cc6fb3641c1eff  ./data-generator/dicts/bigbench/reviews-markovchains/Books_New_4.bin
+349f21f33f23e2e25036b2f92a93637bea1afce0662c0cb723c74c57ba48535f  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Furniture_3.bin
+96879f1c6228d8d8f74a3240d062fdf5331be3d24879cf41d58bc6c29fc2d8c0  ./data-generator/dicts/bigbench/reviews-markovchains/Movies & TV_TV_5.bin
+634e7e4a7bcbbb490f884aca7c2b2f2af7cfea0de111541f040e15453352fbf7  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Pants_4.bin
+e312496046640a9f2cb925c7bd41424054cac6573cbf3c05ee8e067f028c06d3  ./data-generator/dicts/bigbench/reviews-markovchains/Music_World Music_5.bin
+c578e94c94f2682ca0892dfa1f6f0a9948b8f6fc441a5518715bfcb5516b6c2b  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Intimates_1.bin
+081043be79cb80f3b24bbe57a4891ec158c9232bd06c4d1f5d569998a39c282e  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Board Games_4.bin
+f37644d18f67fed0cc5fcc118ac7af58bdc29c30b951c41559fbc753d01f8813  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Accessories_5.bin
+9d6ecfbc88e48629a07424e4b090ec5066fe58b55fb6d6f6407ce823281a172a  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Camping & Hiking_5.bin
+420e2447c6a72bf0d640c34390bfab24f2ca1666c3d55d35d9c88528bdcecf69  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Home Dcor_3.bin
+c1702f45c4586849d63284b75fc7cbe492c0344b182093a11154c2127ecd4494  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Kitchen Utensils & Gadgets_1.bin
+67275d428436fc39714511209300c749ca35fefa2d6003320d4bf17708e3202e  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power Tool Accessories_4.bin
+0ebe9550ec6795f8d0a9ca1c6f2b4325d48ba136eff8ca283e82c411b3bbed65  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Vehicles & Remote-Control_4.bin
+9a71eac9bfa9b8eb0f69bb32902298ba8966c013c7c1cb37fa554ef6a0718d76  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Men_4.bin
+8ee91d2ec907ee4904b795fb966e46ff3186c78f83843cf44c9bbf0a60f8386d  ./data-generator/dicts/bigbench/reviews-markovchains/Books_NO_SUB_CAT_5.bin
+b2d4da9237ee81064c071da51456ef5822907337cc3572eb20677bd65509cf0b  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Electronics for Kids_1.bin
+e648c134aa3413486921ac65e4120118464611e1f77ebf366d4d68eefdcc5929  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Stuffed Animals & Plush_2.bin
+2c25b6aeca0d1990e6df823dbc5a02f1ff46e653d7b3a7cd5d40521093dc8708  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Men_2.bin
+9d6ecfbc88e48629a07424e4b090ec5066fe58b55fb6d6f6407ce823281a172a  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Outdoor Recreation_5.bin
+cef4f03f06418adcd662d10dbca78610f18c9f8233c44021563764d9adbb442f  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Animals & Figures_4.bin
+291588d3e5913f3942137cf937f72d8a0f69f9db349fd003f2adbaeb6eb49eb8  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computer Accessories_2.bin
+c25d6ec44bfd6cc18f3b9c6fa3d6875dacff6211cf2c515ded583c9dd63e3da4  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Dress Shirts_2.bin
+696119d9655242da0384dfab9f23917af59fef77b543e8abd402a322642cbc08  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computers & Accessories_4.bin
+7829b77432e6944d3a8935a21babfee53786ff865f84e31a96185c2563b2f87c  ./data-generator/dicts/bigbench/reviews-markovchains/Books_NO_SUB_CAT_4.bin
+e34f9ec9dfccf01c0a92a4a19276fd648b1d7bba9583b44b144e47f42c6a05d3  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Fan Shop_5.bin
+613521cfc86194b3fed5c971aac511c875b378778c193e490d5517b805c29f4c  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Alternative Rock_3.bin
+a771a8a1d89f9e6d95a8b27ff66120611f051e967c8101efae19cf5f2c7927d1  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Tabletop_1.bin
+18a87f8f586dbb94921a10b55c61dd6a0d47ea4ec34010a10ab9b087cd37b7ca  ./data-generator/dicts/bigbench/reviews-markovchains/Movies & TV_Movies_5.bin
+eb4415aa4c742b97ac798e998c3fe7dfb352520e3c96a84bbbbd05976584ea96  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Jazz_4.bin
+8070947a4b588372535e7b6390168b8a4b0e402ef77abdf4c3bd7ed1026326ea  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Jazz_3.bin
+4b10b0bac1233c184cc6ca17199d7e3e02e8cbcaf447ea585fb0627038312d37  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Miscellaneous_2.bin
+4029420afd5fccf3aac815578000c4d223851db2da39ef5c7f09a6d1abc1a65c  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Learning & Education_2.bin
+8b571c051a2a5f28407c958c4165e5a3734aaea026c7d46792fba58756b46d19  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Rap & Hip-Hop_4.bin
+a2841822a74a323eec1596b31a1eedfa132d1bdbe256bb94abcaa80757871d27  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Hard Rock & Metal_3.bin
+69e4919fbc5c8f76356c95f69d2adfa8a2cfbb4c21a441e66d0d80d28f665982  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Hunting_5.bin
+3aff503a068b303ea5885b52116ca905ca2f2e0b9be1e20a2eb5c2495660af57  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Blues_3.bin
+d3cc2f96c67744622229f0e03795d9538b2ab770eebd138c4780c67f32146098  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Latin Music_3.bin
+30d77b4bc8771d65001e7672f99d0a695cb7d8025a9e279bde90f63d20e49291  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Accessories_3.bin
+0a03c07f724da16b829f39b88e97152789092387bd42edde37148795ce429819  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Intimates_4.bin
+b3492f1749459d89d86a587979c2d3b7f1817c7a58f14e0f4c9725659ec51940  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Hard Rock & Metal_1.bin
+b28e0baf18092aea31888367caabcac7b7eb3076d4b0cff68916a8892dcae70e  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Dance & Electronic_2.bin
+44a8adefc45c4da1bfdd9cacf54c421ccdabac020532ec2a0f28b250730d8699  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Hardware_5.bin
+7d6602c456a5ba629a034b686ab715fbe5442a2db2bef50692b9d1944526de38  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Stuffed Animals & Plush_4.bin
+b1bc5401118d90528eb0aff705693fa4ac6e912d29317050283cd76df1281673  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Electrical_1.bin
+ef9def43219244e3a51a151fe907204d53b50dc28a407232d250a53269a5bc3d  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Classical_3.bin
+35424af6568f999b6852fc809c71c0ae77da42a47a5b3879a9d9c803e987a7d4  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Team Sports_5.bin
+374724b6de671b83001f18a7cf3330cce3c8227b682599409e5e4190bad504e5  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Electronics for Kids_5.bin
+f3b4ea34c790531af65c759ba69e1022cf1428caa89b1ee30fd50ffea6d936fd  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Dolls_4.bin
+4b979181fbed2ef81ceb7f9812155066620346806e43e29dc9f3c484ca046c7a  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Hobbies_4.bin
+8d115528bf8e807cb2f52b6086e7bba97b4909c4307b91f5d797f5b73c2ded0f  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Tabletop_5.bin
+d4d10a32946604eecb78f44d0fb74c80e16481b6c5f69a22e05735d50cf8f351  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computers & Accessories_5.bin
+71b95f79dc80c5779b604e58301b1f5b27171ca432b7f696ed4e809ee8975b4a  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Men_3.bin
+60f8f3060363a0087ff27e90221048012a78ae458ab113692aa6cff734b7e1bb  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Rap & Hip-Hop_2.bin
+9d8b3d00106bc4692b961e010fe2eea2cc8d25bb399c328b2a00e6c971ba5366  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Electrical_5.bin
+95adeacba2f43dff1f65dc88df0bd92c5aff151fecd573c0bd5bea1ae9b9d3f0  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Boating & Water Sports_1.bin
+6fe6d7d296775113e3f4f64c46396b5eda82536ade55cec319225886a063230e  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Sports & Outdoor Play_2.bin
+2a8fae6fb7671f60c0dc88c2140d8676b9900a53278a78dd50161cca2a9aab94  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computer Components_5.bin
+8b780c44cd61844721057fc40fbe6603c29d1722f65cd5e750e9bede0ed9f9b6  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Clothing_5.bin
+c122b27e54cba0a3dbb507c8227b8fb9db2f6c87faedbe8c9a587122b7b708aa  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Pants_3.bin
+d0c6a2f5cb1517e273c2ce1e9ef432df9e300fd560e20fac6443cebeeec9adc2  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Novelty & Special Use_1.bin
+ab6e9ef662f45bb0ca792a7532fb8bc755d9873c43f4ff132e4230301e720c2f  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Men_1.bin
+b28d354276a0b1218738b3e4e6c6e67bb3d5665501827d1e125af5ded0e24f35  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Lighting & Ceiling Fans_3.bin
+48e8b060a89ff51dcb857e9ff6227015beb2cbed31e03cd0c517977907aa87c5  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Games_2.bin
+b6ffa5e0bd644a4536453f9014d89ed1e66e05b7e4b6cdd79d2ecc5beb491967  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Hunting & Fishing_2.bin
+687bf7ce6a8d66082100b428a666041cb96d01825e4209ad493c5fdc9604b57c  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Audio & Video Accessories_2.bin
+d04837c220fad9e89256b0d5e08f05c0419f9079207246f3966d57028791512d  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Used & Rental Textbooks_1.bin
+4c8c242519cbb0685907cbe84905bcabb3d93dbce1ec5b13581eb98b7e4ac53f  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Miscellaneous_3.bin
+5d61ef7f18d2f9511f316def775007fd4b24a58220e06f49c04f23f2fd1b5ab8  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_NO_SUB_CAT_5.bin
+424ce0293984de69f592a5b87833f4e74ebaeb6cdd266432a9cc6fb3641c1eff  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Used & Rental Textbooks_4.bin
+4219f02066b14ab6de417ffb2afcb7532530f0e7988cbf11cc23d69d34d172d0  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Accessories_4.bin
+52a662764d237049e369c7e3f0f1aa7ec868deb270a5bda1dd9cf2355379a9ce  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Miscellaneous_4.bin
+62f4569fb2aab37932451ab79682c9bafe48d34799565f3224b07d77ab152c99  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Clothing_3.bin
+eb3a7bd5c74fb38541ccdb23140bc1014d83c57e77fd14c6eeb84de2ea137ac2  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Dress Shirts_4.bin
+a8de22463e8755d3f535f8239ab95300c8f7e3f17203e955d72c7992ec8fc8a3  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Vehicles & Remote-Control_2.bin
+09cf4aebe8b3fe3a54559ede87315e7c071f383e0f59d88e860fac9be98c3dea  ./data-generator/dicts/bigbench/reviews-markovchains/Books_NO_SUB_CAT_3.bin
+994ef8c88ad43844ee43e743f62a0dc98df640fb6cb6fea9e673766f9a09ff6c  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Accessories_4.bin
+4215831d99630fd723be5a1859a8c3077e52e1181b20111c92dc59008edf5b2d  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Classic Rock_1.bin
+e0f8e6c8d7b789b19c6249d48467cbe2b0f60c6cfec03f9df13ef0417427bf6c  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Literature & Fiction_4.bin
+ef1657ad925ba147ce2226dcb31e2f71a24e219cd1c4f6f7eaedb5c378ddb0d6  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Fan Shop_1.bin
+7eecb70186616bea80564ef32ff6684fcc9a9c9905929fb5fc0bde6c2def903a  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Blues_1.bin
+7141093d4180dd77a315929825ecaced86443da19b11980151b758d923616528  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Active_5.bin
+e8a2ca18709b30d3f175ca186824989b941ba62f2d815d1e28f192838729b146  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Novelty & Special Use_5.bin
+df87a6931197dff94a858156e07960844d6c5e2007cefcc48de9a9274b5a4e28  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Jazz_1.bin
+889da2edcd6ec78a19a47b25537e53da21310d05abd553591a59c88f95e282fb  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Bedding_2.bin
+ad0f68c213a80bf3ac3040f5cc17c6a58b195e5ecea3a3eb427547af4ec7fd7e  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Rock_2.bin
+6b1eefc24570ce65ec9012bc45a91802e647053f964f24452325ddc6c8f8ec0f  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Sports & Outdoor Play_5.bin
+662aeeb252c4213cc295c337a408022cf9422434005c148238f1d47823d7989c  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Bedding_5.bin
+21692cc74111ab0125c62bcc55a69817940d5581921165c2d9b7eb4c6608c1e8  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Animals & Figures_5.bin
+a79af16c9867fc93bd3ea9ec6ed80b1824d471d0d0476c597594708e9c551031  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Alternative Rock_5.bin
+3ca2cdc0a91f398f6a33b259d6234678bbfb9599fe4b199bbc8f2592e6c708bd  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Classic Rock_5.bin
+8eb524b855b3b828fc4a85c7ecdba3c5853543d701f7083ba57e2105baf0c645  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Dress Shirts_1.bin
+8c944a0bfeb4980aa1da3855fa79b9a97ea009b88debde34c2cff0f8490ddb73  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Animals & Figures_2.bin
+e40407034f3f716e989821b246bc0bb4ca31b72ca9648fe08cef1636ddc288b1  ./data-generator/dicts/bigbench/reviews-markovchains/Movies & TV_TV_3.bin
+3c2bda5133c80a5959e8aee865cb7c857878e5200a13e1f53ea225e27964cf3e  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Women_1.bin
+0eb11c40169cbfe5e1d37278f5333ffa9f46c26cf48cfa1fa7293077486f279f  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Folk_3.bin
+815fd27bebc9f2b97db2ea662d03567fa948d16e0ef1af6a748d5edc288e73b1  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Hard Rock & Metal_5.bin
+537ce5ba65ec14753aa0641b48401913a6272522032c01635484b7cdd6c5bca8  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Fan Shop_3.bin
+2d4f821e48dc5706999d9abe850c5460034224baa48576853df0079288b6c5ad  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Home Dcor_5.bin
+85ce8bf8d1ce5cda112e19ef046c341ed6e4aa89467f8d4e8469436b5f62fa56  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Literature & Fiction_3.bin
+7e1e149e00b4a2760f6590b37f0763755c03799edb147f1b6ae67fa65e493e33  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Country_1.bin
+8cf16f40e900e0243e8416c4f2f824d033e9c3dcbc79ba5189a0ff88f3442a68  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Dolls & Accessories_2.bin
+b5b53bb3664a0bdf5647a8073cf70cc7de2d76b5700a3b90d44c99a28d9daeb9  ./data-generator/dicts/bigbench/reviews-markovchains/Music_R&B_2.bin
+887dd633f9fc4fcb3fcd25c6e243b116bb9e99297b174c039d5b07554baa22ea  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Electrical_3.bin
+93ee8408f7eb69b53c6e31db62ef771d21dbd3a0c2227416ef15e21ada47041d  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Vehicles & Remote-Control_1.bin
+47e4b1abf8ec6bf30f84635aea9915c723695aa25daa8d83faab0d57680c3a64  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computer Components_4.bin
+a2e94c0fbeffc79fa7bedce5c1f9ea63d53d2c3e69b68abce188c7afd1f0a8a5  ./data-generator/dicts/bigbench/reviews-markovchains/Books_New_3.bin
+8f961c4065a08d8488d8e7f21e08d0594b330b3778d71e347917a043aa429b67  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Camping & Hiking_1.bin
+3640fd410a6264566265d5ab905eca40856a6e2b70a6b4ff5ae7f3c2b4c65022  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Audio & Video Accessories_5.bin
+b5b7baed2ea1b79153e0a6d0afb1d752df82828a28241d276782f5a28d62f3a3  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Boating & Water Sports_3.bin
+9c40c223120a33df13b70adf514635f3d3a5ec6eec72dd9aae159f062bd53022  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Tabletop_4.bin
+f6630b82aa0ff88e94a5c21987c40af70eeaf9eb565b9b192c53891833456479  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Figures_2.bin
+b8e49efa607e6dc45be7ea58ba351119794bf128a4cb34361612844dc00791a4  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Portable Audio & Video_3.bin
+a2e94c0fbeffc79fa7bedce5c1f9ea63d53d2c3e69b68abce188c7afd1f0a8a5  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Used & Rental Textbooks_3.bin
+3474dc1f3da665c0f6d4e5df3e09aab5cc51167ff049bf2092f19d91b01334c3  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power Tool Accessories_3.bin
+319d3e38b1a81008cdc616bac646f829efb58f15d60e497e05d8c995f3e9d4a2  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Miscellaneous_5.bin
+0e30c6a8670bad8e507655bca26a7252e624ab56dbfd438f29e96fa15a5d2ff4  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Dolls_2.bin
+4889d8f159f12314687b34ab2d473d86ecadc72c394bfec1529c8edab83b47da  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Dance & Electronic_5.bin
+b5f9640a5c239e67c9df651d72cbbd7c790d894fcb0fb6e2f587df627ec46088  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Used & Rental Textbooks_5.bin
+d15835887e15cfafa34015dc15f26fc1b29fee7f8b061fcbfb316c5436a2d214  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Accessories_5.bin
+027ff4bbac781e14aa7f26f04cf7a081bb16f0041b35f18bdbc00f9e63187cbb  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Camping & Hiking_4.bin
+0729cf51260b0584d4db8a2e865ce55663a97db060026caaeb4152bef52df1ba  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Camping & Hiking_2.bin
+f57caf202a920639f951f53fd64c5eea9e18e69fa74c60bba304eb87881a1541  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Figures_5.bin
+943c691d1262fd595b689ca052fef4eb656e56a00bfd57d596d7cba5a478ce45  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Pants_1.bin
+5f8f62b771b7fcf8b6b5b24d6194da5bf7d814a97cf94d6d0ed3ad0122371b42  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Clothing_2.bin
+6c688c2369b4cdb0776afd0493e84cc4a0d340664b6ee750ccc3fe5a58ad0bd1  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Hobbies_1.bin
+53a86a11e6612225225c79433b8c960592a2fd1339f25ad1b7207cd8bdf75833  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Lighting & Ceiling Fans_2.bin
+77ca074ff266bc0981eb24bb743fb1f40c289d9b4d7310f76d15b6833e4cfede  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Education & Reference_2.bin
+b13d1448c705692f4bccdcbc50f524a1b66cfe0644e966d9cd39aafd4c76d023  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Accessories & Supplies_2.bin
+40d063776dd0ff613d215cf47398fc54533b129b468a6166b99c8cf30e9d07f7  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Education & Reference_3.bin
+6aef119674a96d9f55563f244640ca401dfd4c40c8dfa1d5a3fafb6980d7eb6f  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Hobbies_5.bin
+fba99f993fdb2a4c97da1c4c3d03570c5b90ead90263c3bd494aca689a30c8a7  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Home Dcor_1.bin
+18bf99b730c8fea0fbbe0329298e5d85a8371cada7ccd406cf4ba67a24265dba  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Hardware_2.bin
+aad2edc2e80332baef39b911d96076337d6c540ecd36541002bcc48f55b4b520  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Audio & Video Accessories_3.bin
+5c4bd553aff414cfb51ee12912691f4f613bf9539c80881759065a5c8ac04ad9  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Stuffed Animals & Plush_3.bin
+0a43947f6d1e619a7b6de4eb199a1e175ed2f809175e9f7bc894bcf093fac925  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Boating & Water Sports_4.bin
+d394a9ee3485ae09f4e7026fd9fbcb8e6f7460ba06a89d95af6a647f34d9b76e  ./data-generator/dicts/bigbench/reviews-markovchains/Books_New_2.bin
+fe715bc0a45f7900caf14afec236da0286a9c8f40fcabf77f53b9ce19cacf0b4  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Accessories & Supplies_4.bin
+21e768f03f4ec50c2fe39059f483fe04c2dc1e6100aad8510dc5ad6a3fc25da8  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Rap & Hip-Hop_5.bin
+34c6bab8cf9f5cc88497e8a97fefd8f54f680e2b5412ec9f10ca3ad8f3f56f7d  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Electronics for Kids_2.bin
+21ce789aa1c2b85fdc1505e9b3531b45f39b467ba75e277d530893a04b0bd32a  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Bras_1.bin
+5dc70df2b4a33966404c5574293914f4608e96a9bad3518f9942cec678abfd39  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Accessories_4.bin
+3c15210ea672e6a9ed90555c844bfb54879e2e6c73073377c47b7061e8445f73  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Outdoor Recreation_2.bin
+957f9e4112741dda1c794acb01e2d2587de055c516f508058864d997fd0aae51  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Hardware_1.bin
+77335d5a690b116e9ad55d319fa6f940f8deb5678fa18660904dd3653e4b7f7b  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Pants_2.bin
+b23e5c5c0723744a2e9c8475b5f1046920d9d8dc0bc1e5b0dcea57ec9e1ca599  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Pop_3.bin
+c44586673d170a2dd9afff32b9992fc871c90d43b60fecc726a8963f03194f89  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Kitchen Utensils & Gadgets_4.bin
+77b2eabe1ab37e893de6a53806bf07d5dd06c82bd3a4a3244bd4133c464e6e50  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Bras_2.bin
+0c871386258a29e70b592a9143000cddb667ddd9dc7a966d42524e815f1b0f69  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Bras_4.bin
+d69c7855667a18e524dd2de0be3bcc5d6368040b644693fe569c28cb63ddb1f5  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Country_4.bin
+754162d8ef548296c060d4534b1a3d150b3b74374beb1191c6702af4d2ebc8e7  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Dance & Electronic_1.bin
+345d1a7f4a2457d5ed1a46aeadf6eb3000a4ef5c5215cea9dec70e56a1aee053  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Hunting_4.bin
+d5caccc4c12604d67aa6c4369240e775e83935dc67840e43afdf38d6c7433c19  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Hand Tools_4.bin
+9fa00698b97abcc2d111351af1eefad709d590d1a14bc83465dc6a79d81587e4  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power Tool Accessories_1.bin
+df3a028824b33fdbe19f38fe76c0bcffd7c0124da3f8c0291a403ae8cad267b3  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Dolls & Accessories_5.bin
+a049f08c94c1138fdffcd6480141d3d48924f27e89cce8d9d6904ccbb9607afa  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Active_4.bin
+fda4fb2a7cfd189eefee501bf612d2b47ca1d95b49ef20ba9773bdf2ba1642dc  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Dolls & Accessories_1.bin
+3e214bde8b5025bf090f69e8d4acdc79d3c3dad86cf761f679bfcddce3760ddf  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Kitchen & Dining_4.bin
+f64dc7baa5fadca6e012da7a0badd0bb99bd36508cd058528e28b6d48b636f90  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Classic Rock_4.bin
+028e4de2a613636843b4ea959b0c7c1cf46db8a436f708ab24308cbe0e1b2f5f  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Tops & Tees_5.bin
+8d6f78a2188e3b3234fe813b5e79b96b030737dd286e1cd2909213b394bca02b  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Hand Tools_2.bin
+1d4d83c34f3bbbfb26114bfe69981e0064e3bc19f90211054aebaaf6dc6b4945  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Literature & Fiction_2.bin
+54c64009fe809a2d0ec2b5295a889231e291e3ed8c413f4e2078d72ef2ebbe52  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Hunting_2.bin
+2900927e851be144d4c7ab6322c63df285de64e32c6850f431fd4f5be69ae6e0  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Intimates_5.bin
+555509260762e44ec638f19de99b56408f353d3a4e8124fe0ea6d1d618ff4166  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Vehicles & Remote-Control_3.bin
+45ee57f91d216b8823f2a2bd6bc8cbc28042c2616d4261507d69fb92dd31f4fb  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Dolls_1.bin
+c3a468bc3109f8db1cd14d109211ca9917280b2cd573c271692cfdf43867e96a  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Games_3.bin
+a7cac370676dc9d1b09fb2a98baa76aa7ecf2d7b2b6cb1b8eb631e4faceaa313  ./data-generator/dicts/bigbench/reviews-markovchains/Music_World Music_1.bin
+0fe0c422a12167b0169c8e07a635aef68dc9da6321cdc0787ae96ce7b3d7fca7  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Outdoor Recreation_1.bin
+1125b15f6f2396f89762e45ba6043ff2411bb4600acac4158b3313791fcb54d1  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Accessories_1.bin
+4627475c1181c9294f417c40b71d77bb049c114723ea33476f37b4e70c9216aa  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Learning & Education_5.bin
+90daea3476547eaa4ec3e892823afebc6db42a458d645b0b49c5e2d493c0ec2c  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Latin Music_5.bin
+d5bd493edc0e6599a2c46b776f010324eae4037ecff6cfc7f5bf3c7e5754d2d1  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Men_5.bin
+b8c1d8e3cae24ca99d94cb76c44c93a77b6312039e42785dc64747405ee3d9ed  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power Tools_3.bin
+d04837c220fad9e89256b0d5e08f05c0419f9079207246f3966d57028791512d  ./data-generator/dicts/bigbench/reviews-markovchains/Books_New_1.bin
+835c965ed24175b5f1262c9db0f048ccaf9e00b752e11550eae43463d31b44b9  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Miscellaneous_1.bin
+18f13980a2276414b268d34a11646218d35a243c2a9f411d83a9f06211495661  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Bedding_1.bin
+0a85b20bff8619a20c42434af38dd116809030bbee8324032fe2bb58598dbaa4  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Clothing_1.bin
+653f679f445034b017766ee3b1c276975b6f81427f6fe9689868601ea72a271e  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Camera & Photo_4.bin
+658fd8e63c021ef111398ecf77d6dc6a660af2ce76c8546cd419bc54204ac62d  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Dolls & Accessories_3.bin
+724c0e3007fd536fbba2f3e05e640775a1a0bd09e55a4b7b75298a41fc22ef79  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Hunting & Fishing_3.bin
+2cd6397f30baf0c8f60d25b5c54c7d194b7fb35489798eda99b63b5e39d17e5e  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Dolls_5.bin
+6ac57e337f01795b49d263ab92c0cde44c0b9dac2a9319490f1c63f1306f3447  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Alternative Rock_2.bin
+bbad4fe47b58b94e4b7f5a23cf5953ead82ebd78dbd0aeaf5c7d47a1db4226a9  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power & Hand Tools_3.bin
+5baf872945c7f7cb1c4a4c98f2a154a54a8b89620aa3f7f93019b69b052b976e  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Accessories_3.bin
+c2d04b1e4a4e533ae67138fe62bd56e43f68d7eed366c946e6527f81e1c18bd2  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Tabletop_3.bin
+2ba944a33509a172a8ba88a6299000957176ce483ff72fe5a91d0c61b2e09796  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Classic Rock_3.bin
+f81892670bd2f671781d75acc935c0483a0156d80ec0e27f39b166e56bcc134b  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Hunting & Fishing_4.bin
+957cd359b0e242cd807748a76302aac552dbeeb280f86223ef9107e89226bf19  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Kitchen & Dining_1.bin
+ff91294749174c9c714ada0a63332527d6377230ba60b02cb5f41ef57e0d74e7  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Team Sports_4.bin
+6984d6cdeef2879c037e9b7d5fbfba8f57ed938f25a4c96ec136a7323585c888  ./data-generator/dicts/bigbench/reviews-markovchains/Movies & TV_TV_1.bin
+4dad02339bf7de9c80816df9d54e60c1fb00441263decddfbe095a28677aa45d  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Tops & Tees_3.bin
+8b663a8d8b3ec9949af9ddec19c6dc501ceeb6a58c90d1d3ee82671ebefb321b  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Figures_4.bin
+bdd5151bd870658795c08ae32acbf474196f199eed2ded15c624b4e6f3e75372  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Novelty & Special Use_2.bin
+66f641cf209c1b0b824951bf1281bea2e81a1e0468f7334681d0b47a702bf407  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computer Accessories_5.bin
+7870c4e69598707daa024f321d9a66f29b3459108051a1ca701de200babefc6e  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Classical_1.bin
+4a65583313fbf5958737740923e49f73c6af58c81f3b87a919d04afdf9251124  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Pop_4.bin
+6e84c3e7b945e6fe8c351896c715c95ae3fe2c2e5b0575ae28524300d92d4ebb  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Sports & Outdoor Play_3.bin
+b319cd3605aec4caf8edf83f7eef2f1f03e6b869e7ea845aeb00c2711fa5ff55  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Board Games_5.bin
+4bf02fe4079222557e6e19ddcb11256ca04d9331c92583f6b2dc566cd64e33bd  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computers & Accessories_1.bin
+0ca9fb38743052999fec06976b03c97c1f1e10ca3082b2f06f35379274bd308e  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_NO_SUB_CAT_2.bin
+9619065f2fcedb187b8e455529b2a4744be5fc277267c22e6eddb6d04ebe8152  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Home Dcor_4.bin
+4ec0ec3aa9e97f8ecda624800a08d3d5a424b6b36ea32f1b3677901fe5fa74fb  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Men_3.bin
+0a09296e57f1c94ef2c98a3e9eaef16492805226aa73efb2e66280e9f2262138  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Portable Audio & Video_4.bin
+9cb9eda5797d98779a400f3aff1040bd9c1db4fd66128f9db7b9756967683077  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Men_5.bin
+52e0093662d26bc41abf2e56fe9e8b278e9aeebbb5dd8a671c7d9aeca0b7d406  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Portable Audio & Video_5.bin
+287d2443d3fc9c048256412861be4ff08029684a2bf7d9e52048093f7764c4b1  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Men_4.bin
+c107cbfc6f4286ccc90d71faa5e81be092d7338cfafd0be1b7f9b769ec9e3a4a  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Team Sports_3.bin
+696119d9655242da0384dfab9f23917af59fef77b543e8abd402a322642cbc08  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computer Accessories_4.bin
+ee107ad38251d48e51f1c4bf7edb02d9d58b33a7d621970c14c787dfef587747  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Dance & Electronic_3.bin
+fd5a7c83cadaa7f8bcb47fc76542366d805ed8bf50b0943489166bf6fee6e321  ./data-generator/dicts/bigbench/reviews-markovchains/Movies & TV_TV_2.bin
+3fe4afddb8961c685148e8499a5fb4d166d7d44155fa6299ab6d5f4f8a169473  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Folk_5.bin
+1ae0a7f3f3c84b53329cc9ac4cb686e6c3c717a8dd7570b9c57bba3ff0a4abe7  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Games_4.bin
+3936491a5d0269cfd5bb1530ed97cc0806d007e94a1b7e00a1d9c3870bdca8d5  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Classical_2.bin
+6ea57353ac24e172ee79958eb748e2eaec10ad6104e8cb6271572836456c6c9e  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Hunting & Fishing_1.bin
+0963a775fa93b4014986e8459ebd7fb4edda9995d8698841b4b99a91508a0154  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Team Sports_1.bin
+ff765378ecd361df1900281cab491ad77c43e0849001f4672196e9e3f2e9545e  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power Tool Accessories_2.bin
+b4e254dd2a292c0d0bd55a69381114816c6502d35caeeab651cd4229fddb2a00  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Home Dcor_2.bin
+3390db481138e94c337cd55d6a963400d0e498d7aaec328173c26079ea0b3870  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Active_1.bin
+ada186078b5c2ff40a1a92532624d3998286f388c7a07d5ea47ac6fbe4e88564  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Lighting & Ceiling Fans_1.bin
+018e66c6cb0824f6e941ae7261fe2e5bab46ed69795ccd09a5d6be41fdea1723  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Accessories_1.bin
+1c40bd11293c1f3ce65d83347ea43d27458ec78f711514614d6ee2f31a269532  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Kitchen & Dining_5.bin
+78fab8b6245c0779e9735ec1832c1892b9cfd90825b7f9a9cd444f06324d0fd8  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Hard Rock & Metal_4.bin
+650b865398ad537e82ab58bfe6cfc1e6818967104ede56d41be83787b834765f  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Education & Reference_5.bin
+0259b40eaa5265aa5af58e24125b0987667b4e4f5a096f174724d98a4db692a6  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Education & Reference_1.bin
+93dec146db811b0f9915bdfd8dde04f436e4cce8092141a531611e190d70e285  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Kitchen Utensils & Gadgets_2.bin
+d5cb9e20b825eb5384aec81f79b097bb3e8230e8898b0c998cfd1739d23d1f16  ./data-generator/dicts/bigbench/reviews-markovchains/Music_R&B_5.bin
+408244ada7ac0b31f0354961cbdb52294536e5a44ca1adeef424814707eeab30  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Learning & Education_4.bin
+a71dc57edd5a63c07a3dcd49ad1379ad8072dc97cd7072f1f079e90f76252eaa  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Dolls & Accessories_4.bin
+483d08741606a1ce87468876b59b72de09522b642bbc675da51b7777b73bc9ea  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Pants_5.bin
+cb59581688986f05686d5745a8dd27850733f1b581e8ab3b2d82cde724b9077d  ./data-generator/dicts/bigbench/reviews-markovchains/Books_NO_SUB_CAT_2.bin
+713de6d0fe67e05543a99f270a79b2fcffc821b6eac1d2f3be1a2765cdd2219b  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computer Components_3.bin
+5972d8f81916b515c4d8a978d5c047ab20cd2b2be59fb5edef88a6d703a7913e  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Latin Music_2.bin
+87d00de733c53d3a03c27adaedd182b98825897941a67f0f314217e9319d703e  ./data-generator/dicts/bigbench/reviews-markovchains/Movies & TV_Movies_2.bin
+f2948d325d60955c38e439d9a3ba6bde571daa1c80c7661d6ab89850530d299b  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Accessories & Supplies_5.bin
+388e69e54cce456e0f9302eb3434823dbd5d8f330e2a48af2fd6847479f842c0  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Latin Music_1.bin
+215ad24cda2b1385ad74b3042f9d40ec0a252d10e02c12d8b392a3e712ba5e8b  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Blues_5.bin
+484e51bb000aa4917a54bfa35ae4aba6d39b774455e7b5936881c8273cbe6c4e  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Dance & Electronic_4.bin
+3c25cb9506656f453be348a0ee3750119b8177c04c426f5da3fa59d2102a2027  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_NO_SUB_CAT_4.bin
+2d00ee072e003bb38d936a3755f607e331635dc9653258d6feaa0ec6d64136e1  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Accessories_2.bin
+a45fa6d223660f22f55d85dbfbf6fc363c5454c1c601353cd088e8e40f0e5330  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Hardware_3.bin
+eb9a418cf8748fe59bdb47f893d4cf2049af06c622e56b8716fd3d00c3221e60  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Electrical_2.bin
+6d377954ec18d1394184e8af93ca4fb5e9b47dc2905d5ab7f29f791f4a588d27  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Boating & Water Sports_5.bin
+b84ade8be82e7b9058dd7b42a4e6226ac5dc73d9314c45d92a86716d12679c0f  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Action & Toy Figures_2.bin
+1475cc304aa34e5169da224b0d789af55384808edbfd4e94ba4c36f67e8f3ee8  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Country_5.bin
+7e5b4a824b597bb960838b0ca659e358cccf0697c547ca81ba734a7b35aabd59  ./data-generator/dicts/bigbench/reviews-markovchains/Movies & TV_TV_4.bin
+c0b9bbbde7b2be035483466e7cec7a867b495a2b9529187976d7fe9ae12152c9  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Women_3.bin
+5f2b47e570d248eaa028e9bd397f81f52d9d223c71d757a3f46078b16d1d61b3  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Bras_3.bin
+43b0f532939afaa7a6d9fba1a195f5ad778f117d5ff6dabb6261457aa628c81c  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Board Games_2.bin
+a1f8c3c19eb00eb207500764e67db6f931bef46b0718f691922175337359ef3a  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Rock_3.bin
+335a3585c8c5e81aa15c846f9eb8d257cce0ecc9897fc046dfcd8dbf9fa75479  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Hand Tools_1.bin
+3390db481138e94c337cd55d6a963400d0e498d7aaec328173c26079ea0b3870  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Men_1.bin
+7ed8b0f6661ac7a50137e1294be111c55030831aaff84c1912258df3283ba756  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Classic Rock_2.bin
+c6a6fcb6e63c29b9542696abce27465297ddb34447890c88e2ff9dd9f02e7c79  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Literature & Fiction_5.bin
+bc5c64a7d7590a78d6532430ab627a8957a33d93e5a0483a022cafe68af0a451  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Accessories_5.bin
+b8fc7b64a7cd525bc870d8f63c290d3eaedefa9f1d8f5fdf8821fb9f69a4b5a9  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computer Accessories_3.bin
+f47112f4bfacf44d5fa5d9634bb8944e34f30190b9c2ecc4ed00c327be5cc44b  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Learning & Education_3.bin
+a163ed2a804eb79a918047ca795679a8ece7783aed508120108a22a3f5c9b256  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Action & Toy Figures_3.bin
+bd50fd398485294b241b6daade2ca15dc2ee1d3aef697e7d666aa296571ad221  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Rap & Hip-Hop_3.bin
+c2e4663b43174dfa25585a287efa41691696d17b777677203a310def76ea272f  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power Tool Accessories_5.bin
+9de273bfa56291e1610fbbdda316441f34b041603ba7ec445358a9b687b26c28  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_NO_SUB_CAT_3.bin
+a22edadcb61be8f9ba8afc484073fc634af3ddf6796294c8b93d97cbac12f6a5  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Accessories_3.bin
+c2b2b09e035dff96487209376f383df7226ae37b717fbfa3844a2bfc5750cf4e  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_NO_SUB_CAT_3.bin
+b1ed46ec07e0ca1ec3f49aff1d229b2bcdd2d98fdcca7e539848d4b213c32026  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Accessories & Supplies_3.bin
+e05113fb864f7234699e0d1d4684528c536ec1db815148053de333a0d98ea4b4  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Dress Shirts_3.bin
+328ac5b2e4310f4d85eabae903b5808ade50c682aee4ac11c984b65c5fc8727b  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Lighting & Ceiling Fans_5.bin
+b70bc8b828bde274efbad36a4430909b081bb316ec4034fb5ffba308803e0c39  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Action & Toy Figures_5.bin
+09eaab71caeab6bcbfc3d0c19075583be08e307a8c83fcc2b20f3c63f8e4b100  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Women_5.bin
+d27a8757cb358762716423ba8eb9ebe5c34b613db862ca930395160a711ac1c1  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Pop_2.bin
+cc3b8e290441fc490708b6b30f9b6bceddcf6bc29a009615095d3c0aeef03126  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Tops & Tees_4.bin
+1ccfe6591bc0f16051c23b54d3038a69aae38db65634f7b3acbc28300fe8d983  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Furniture_2.bin
+24325251623fd632461ee88999ccb5409e933565733b692f7daed3dd05401a36  ./data-generator/dicts/bigbench/reviews-markovchains/Music_World Music_3.bin
+a5e5290ec7e50fbcc8cd442e9db514818ef55d83d52b611142095a3f2d5bad49  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_NO_SUB_CAT_2.bin
+3eb8b9bd16b11cffbaa9bc7e26d78bc03c34b34bc5b73dfe02685660710b4915  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Hand Tools_5.bin
+68836b8cf66e482279d3752e2c2d8ad47228a1adc8fae3818ed01fb2c3b87979  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Lighting & Ceiling Fans_4.bin
+6114c2b02485240157228ce96c80022900d3b7d96e694498230031040bb20014  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Dolls_3.bin
+7894f494df04a5d70cd19466e8186fa77d941c9741ebb49e1638ddf86b6b404d  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_NO_SUB_CAT_5.bin
+e7dd1dea1aa877357d0102788b564a33a72c76ec83e21942c27e446454689c0b  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Outdoor Recreation_3.bin
+519872d3816e2b5123110003c5ee62d76f39f941c74842eaa098cee963475300  ./data-generator/dicts/bigbench/reviews-markovchains/Music_World Music_4.bin
+9e6b7bd62f914b5ca3d97abaaadc2dadd063848f87b54c78ee84a2a580a689b6  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Action & Toy Figures_1.bin
+7a7fef4bcb88733c05e14310e966fea9da97e79c6dc73debb83fa0e276921932  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Bedding_4.bin
+2cc66e1b5ffeb897da87714de2dd63435950e84303f6dc8d989a28f50708ffb5  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power Tools_2.bin
+9607d3671781510b977565d50e26c0938eacbb669d1e9acece152925a83817a0  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Furniture_1.bin
+7ef918230ede2201229c127dc99d8a2bd48eb5d60a44b6233b08492aad80915f  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Folk_1.bin
+57f15b41377766cdabe1b4e8d8dcf1d5b3e4d6ad3604f368dcbbc7b8ccaacb90  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Camera & Photo_1.bin
+16364eaccd5f44b54ceec663546f3922a39b9438c386aea9677047be876494fd  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Bedding_3.bin
+d2a01bcec38afaba3c0b0bbc8d1162a78221976d2e98c633f22243ff14b5d647  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power Tools_4.bin
+05ad50a59f28c97b034bf857bd479bcd960a09477d201c6f9ce4e9ff9ed20b56  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Clothing_4.bin
+d6b2473e9b530f0b5d99d6f5cac2b60e8e95bd7ce3e2fffc47f3c978357ac8e2  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power & Hand Tools_4.bin
+5ea5117a2eec6ddb3c68a71a1fdcbd6aacd697949fd01947043ce6bbd060cbc5  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Folk_2.bin
+fcbf176598bb35bbe2385c9d0b3a6e9bc31b75c839e7c540baee1f8f5bd49d18  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Active_2.bin
+fa06fe4769759c1327adf8ab30c4c8c707943c60178835db9f5dcabb3b57b939  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Figures_3.bin
+96aa2d2f03bd30a9c8d566eb943a44a90af3413b012592157a982bb809e3efd3  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Women_4.bin
+f371ca430e369a6db5cce6fe289e2aa4e560382034b82264ae81760f2826446d  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Women_2.bin
+f8bd8b3b79d6bc7cf6ab3f7c212cf36441d376a748ec1950e81c1f0ff822863c  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power & Hand Tools_5.bin
+c6549bb341b280b5a334f07f5a3bb388cf7f4f53d5ef844328357d3d1837d738  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Jazz_2.bin
+369dbdbbb2157b9f7a9fe61b4eda88ae196d1b99ae619416295838cac95889d0  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Classical_4.bin
+6615afae2ac8398123c3f24f6fb832257bf203cca8faf106d30d728d0968efca  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Stuffed Animals & Plush_5.bin
+b5f9640a5c239e67c9df651d72cbbd7c790d894fcb0fb6e2f587df627ec46088  ./data-generator/dicts/bigbench/reviews-markovchains/Books_New_5.bin
+18f1712b283a3f90230efbc34154e2bd907f62f8b46fbbe7ac334a5c10a064d5  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Education & Reference_4.bin
+d97cad7ab6c0fc7bfade5e2a51d257aa75737dc6125ace649a1ead695373d479  ./data-generator/dicts/bigbench/reviews-markovchains/Music_R&B_4.bin
+5bafcfd25b6ec40c1297616797109460ec2dd5660d08686a1729676958fa030a  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Accessories_1.bin
+1a0f9ee4476e356e2662fd471b825b7357fad9cb07397bf5871c858c04cdfa97  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Board Games_1.bin
+deb37d1d0b446f2a66a75b7a11d3eb50dc02d14becb3dec91cb9b1626e6ea872  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computer Components_1.bin
+7004e288339d93da2ab2f490fda9d83c08680ccadf2bd65d49be7767445e053e  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Blues_2.bin
+9aec05254f18a67cb20ee44021b9fed22becad4cd045176915c89ea23ac329b5  ./data-generator/dicts/bigbench/reviews-markovchains/Books_NO_SUB_CAT_1.bin
+5e617e92bbe810c5205167c630f0a6eac049475024b16b1156b14bf60c2aedf0  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Accessories_2.bin
+c80f0139508e1dc7c522694d016c724cf4eb6ee620b11b8aee1d1908680e047b  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Latin Music_4.bin
+393b7c6dd1efe3b22d6b91bee2069be8c98578ea870e964f37cec1bc67719ac0  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Alternative Rock_4.bin
+d394a9ee3485ae09f4e7026fd9fbcb8e6f7460ba06a89d95af6a647f34d9b76e  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Used & Rental Textbooks_2.bin
+bd82c9d9115790c5a1540ee3e4907b55bc906530d28cfdeeaa51865133113014  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Folk_4.bin
+d8d8bc3707849102e364e0c2361711cc9ce21a57c654761a2e0582c77ce5eab9  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Sports & Outdoor Play_4.bin
+49744066763527269bc3d99fbe00d91dfe12033497f529b628d077a496fe2e3d  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Hunting & Fishing_5.bin
+2293b861d1e8e80ad68f570ed49e33656c2eddd817e7a508116f037243b0fc45  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power & Hand Tools_1.bin
+dfff8d110ca337becde95a2acc2375fc9a77f7670b78892d0302058c1e011fee  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Fan Shop_2.bin
+b2400f2a21a9443a8df9da7da49f5db8be2770a80695fc8ccae66c4bba0b0ad2  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Computers & Accessories_3.bin
+750e94a97baf24bc3ac0b9512b0af21b7cd734f8bfe8cd6665d71f6017d5015f  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Kitchen & Dining_3.bin
+090df93dd8dd7b6742c5d970fd1f08a2baa38c5e1852f5b596195dd0b62614a7  ./data-generator/dicts/bigbench/reviews-markovchains/ratedSubcategoriesWeightedList.bin
+53f0b10f0211f03681e3e68f67b66908df9e07338c515a22e2e635673806f892  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Accessories_2.bin
+d66a3c6c7e3a9ba0656f6631b3641825fe04836391cc17425e094b7536cda0a4  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Camera & Photo_2.bin
+b049fd81923f9618d4e39bd9d2512cbb3268c06737195e9232ac462e8f12869c  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Tabletop_2.bin
+2edea09782b90a12c1f8216cad0093cbd0ec939089559a4b457f156fa6fafd21  ./data-generator/dicts/bigbench/reviews-markovchains/Music_R&B_3.bin
+2fbbb4db0abbec3b611459bbb8d4187866fa66a547c843ce56ecb42456f958d4  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Rock_1.bin
+b5ed76e4b8dbbba236c9b1f44136d3362bdd699f3b60f5f9db8df4f3a1cda8dc  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_NO_SUB_CAT_1.bin
+867e478b4a63a73b2fbf64b6c714c06873ddc46a84c83226cff088ae6b7f89e1  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Intimates_2.bin
+be2a24a08f76a34987aefe5c351c2421267821cd49763db3c32aa00231c7eeca  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Portable Audio & Video_2.bin
+436dc0e74b9200f97222939f1ba6063c622f9d8dbc19cbeb94f00050b43db61f  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Active_3.bin
+9f20ef36a8595f7f91a928246646b3c919fa208bf455d1438d2a4df56e17bb82  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Figures_1.bin
+98680b5e9d8fcb98a34d0c28cb8344e04fc96ebc69b08b5b00bb8ce29dc234bc  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Blues_4.bin
+9839e52026e21ab23f557ae946e870a0b79ac0c76dcfe79635e470002a52ce51  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_NO_SUB_CAT_1.bin
+dbab74f5f23837d6f1f18b0a38c77d69b0910b8b592925dcd9102eaa5b14ca9c  ./data-generator/dicts/bigbench/reviews-markovchains/Movies & TV_Movies_4.bin
+7b96c3baf53180f525be146c03bfb1fb1c8925077c99befc652a2e539de24221  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Stuffed Animals & Plush_1.bin
+06e25270ecf3579d2d15646be0e894de7432bf0e32b98dd5b541d0fc800a4d3b  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Rock_4.bin
+53a83cb521d8f2cb4669fdc2543a87d446529838ea4dca91b2163b04f25f122a  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Electronics for Kids_3.bin
+9fe1db1c47a37bb1b19ec6e308c98eb0e3b62ab8185bf40e119f4bedf939f825  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Hunting_1.bin
+e181bc7f558895d2a39a4bc037631de7864560d22269e873daccc635d729d55d  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Portable Audio & Video_1.bin
+37e411a5edfbe5fd7cda1beb6a64860211317193f528fc950beedbd6b1a695ad  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Games_1.bin
+cd041ffa068b40b51406fd98a4abfc00cb283d8123061ec4dd4bf3df0673f16c  ./data-generator/dicts/bigbench/reviews-markovchains/Movies & TV_Movies_1.bin
+24055a9e38cbced869483675123a1448cc174644cdc3e1b891dc9ca1893c6106  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Tops & Tees_1.bin
+30d8667a565938ebc323d401f72e5b5d7224f48cd84a13c0cf85907afd5e1c3c  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Sports & Outdoor Play_1.bin
+de645ababd925bb9b3fc1510c9c0013f55771f222640f4a746fcd3db98c6ce35  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Novelty & Special Use_3.bin
+488e1e1b639743486827ba93bc74cc5201b7cc8a94a1df45a3d001a83059e5eb  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Rap & Hip-Hop_1.bin
+2fd2f311d7d2647886e247979fb44b20998fec10847723c94eea03a81778b77f  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Kitchen Utensils & Gadgets_3.bin
+966a7d9db51c35e7e27398481a10fecf78c102b5ce9f9489ca0dc5a6e8c51a26  ./data-generator/dicts/bigbench/reviews-markovchains/Books_Literature & Fiction_1.bin
+605002fd1d7f943875f4baf456cfb173a605420d6462d5508d92e4bee758d266  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_NO_SUB_CAT_4.bin
+8c98bbfc3d23967bf3b50c66f4a46b41432ce0078c362dbc1039ce4a1c87d8ad  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Hand Tools_3.bin
+6884298e44c0cfc7dd5f4fe0450332e4bfe2922e2c2b719b732baf6676b733a5  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Country_2.bin
+7aafbd7219b77c499a2c14cd536cd16f961e3651a13b9faf3b0cab456a8cd5d7  ./data-generator/dicts/bigbench/reviews-markovchains/Electronics_Audio & Video Accessories_4.bin
+75ec3b5b32161d41d631742731aa1e3a557da74cb82c85716b45c718439722ec  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Electronics for Kids_4.bin
+4ac4894f971c4a4090f2ff4e7eba968106ab2c89f52f5fbc2d0d003cb9d63b6e  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Electrical_4.bin
+93ccfcd69f1fb7ae830fb6220c5726389bd1050af38fd1d00cdcdc91a09cb959  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Hardware_4.bin
+929fef5a4fce2539c565f8a0f5da70f53edc322e4a51f9a477ef636b96b0e045  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Fan Shop_4.bin
+37add627e1e89eb5efda1650d316acd95bfbbe05db6e6501645712072e2ee7e3  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power Tools_5.bin
+f6b401c23fc7e40087690253cacd7d08f35d982ae4b78dda934f9eecaa717df0  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Dress Shirts_5.bin
+1b9f917f294ffd2c234482884871dd33b8f6f29c5ec84e006e49658b01be1c95  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Kitchen Utensils & Gadgets_5.bin
+ead41812b6da4a11f55b5c532639a034080a32a955e2bc47589990d2c99cc917  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Pop_1.bin
+821241e3b07dca9c5a92bab9f68fba5a97af8be485fae067eebdc8a3c9a944d7  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Board Games_3.bin
+f77ab9dd0a5b0e8c88b04b8b5d88a3d31afb81f4985c8c7cb8afe96f7e9fd690  ./data-generator/dicts/bigbench/reviews-markovchains/Sports & Outdoors_Hunting_3.bin
+cac5ba5a33f927c084c9a60fc5a120bbf59f53f13cb45134026757949a52e1cb  ./data-generator/dicts/bigbench/reviews-markovchains/Tools & Home Improvement_Power Tools_1.bin
+c3a185e98b94ff8659f41aed8cdfa22e540701567f807ee3060ede98e9838e2b  ./data-generator/dicts/bigbench/reviews-markovchains/Clothing & Accessories_Bras_5.bin
+ff5abc7c63598d5d1906b0f8ad6ede1e6a03a3d797f7a985e8daa9beb1444b63  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Hobbies_3.bin
+019c24de84b35e2506964b14fbbb01f06e3b39cb56d0388d5a7422a0666141b4  ./data-generator/dicts/bigbench/reviews-markovchains/Music_Country_3.bin
+3f524737d174d34e6b4c6a6efb06d50db7b6fefd68a1a24e9941c580a904cba8  ./data-generator/dicts/bigbench/reviews-markovchains/Toys & Games_Vehicles & Remote-Control_5.bin
+1527e927c082de1e6a56d5b992a8bbef348ae09d99aab5e98b3ba979a009d23a  ./data-generator/dicts/bigbench/reviews-markovchains/Movies & TV_Movies_3.bin
+8c7b2e65ce09d83a6c509f6d679109ab8f76ff276ce9ea1e2e14386c7ccaa231  ./data-generator/dicts/bigbench/reviews-markovchains/Home & Kitchen_Furniture_5.bin
+029d5d291db33c4dd995f9b32b50ce2379bfd7bb146ac28e3545c795f9eed1eb  ./data-generator/dicts/seminarnames.dict
+621233e653851777cbc478fc99b64ea51f59b41e4c209a9074fddcd4df45cab4  ./data-generator/dicts/tld.dict
+953a9a0895416f654c7cb2c01c99254166443577d1634ef0be00a1e15fc405a9  ./data-generator/dicts/Family-Names.dict
+81821f4161262bb424c18fbcd708125d18a699df5b1302ca675d668195026a12  ./data-generator/dicts/degree.dict
+b483f44a4d63ee260f8c7d8cdfa39a66bcdf978a9be8859f5e6d7b31e5517b9c  ./data-generator/dicts/languages.dict
+20bcd3274014c60826ee47612d54df405691f42742d388589a761b6cb0340837  ./data-generator/dicts/Given-Names.dict
+bedccf3bdf965f35c46cf0c0409666aa3c9e5e383d063c9e1c32c869e820f117  ./data-generator/dicts/city.dict
+03f29ed4a6f1f2c35b94f3e9d060ab6a9dfb0af186b68de275575b3e33f15e13  ./data-generator/config/bigbench-schema.xml
+1f7f5a7e19aeb3a16d8cedd74ec222268a1b6e7504e20fac260026bfb5f0bb49  ./data-generator/config/bigbench-generation.xml
+1e24fa0c6a6899f5b9455b193749e54ddc71b90405265313b731e1a6de126778  ./data-generator/extlib/lucene-core-4.9.0.jar
+c2d70c57c309a4ec1ea665e8d6715bb64ba8fbd18895ff726243d34f43819d9d  ./data-generator/extlib/javassist.jar
+77cf983703ba0edb952b71436d0fea1108ecda3aa82b2970936c3c4041192d3b  ./data-generator/extlib/commons.lang3.time.jar
+a840968176645684bb01aed376e067ab39614885f9eee44abe35a5f20ebe7fad  ./data-generator/extlib/xml-apis.jar
+9f5f5799707881451a39c1b2dd22b4e43b97a80698db7daf1c9697f545e24387  ./data-generator/extlib/log4j-1.2.15.jar
+efc0caaa79eaba9c5850356a51c1925ae45d58bbace824165f4b194cf64f58f5  ./data-generator/extlib/lucene-analyzers-common-4.9.0.jar
+ac178d18c6bba8b70bf5603a07eb1add3aeac6fcfd5323cb438727f56a3897e3  ./data-generator/extlib/lucene-suggest-4.9.0.jar
+175bbbd9def7a22a30e05f9c8db629c88fa5bdfc57d5658791901b54222abe1c  ./data-generator/extlib/xercesImpl.jar
+b35ad597f17a6f221575df2f729a9de8f70390509e047680771e713bad713fb9  ./data-generator/extlib/commons-net-3.3.jar
+bf1ada592f7c1d2aae1121149945350123820f9e714267a95184f4cd9f91ff9b  ./data-generator/pdgf.jar
+d78c1b7c2d2680b3d83a8e2045f12edf5378d37a4cb805d52c2d82c895f6f66b  ./data-generator/Constants.properties
+77f465862526cda559fa6e7c04d0e045bbdf568a1d43a6b4256eba289ddaea24  ./README.md
+56145dd3b6a871568b22cb90136977dcaa0d964363a649681d3789b20b840a3b  ./engines/hive/conf/queryParameters.sql
+84b03074e9039be56c9f16739e5c067a86271159275356b7fdd664d477624727  ./engines/hive/conf/engineSettings.sql
+e6fb0fc5a0f275584c4950ee00d1ba3ab227f61ca19539cbaa6b0216bb48b994  ./engines/hive/conf/engineSettings.conf
+931986909273d1da213a71252deef213b2d085e1fb8e37a7e2f19645566dc7d5  ./engines/hive/clean/dropTables.sql
+2ba61f5c07d35d43dc5d1739b586b4a59ee44daa8937171de40970a587066aab  ./engines/hive/population/hiveCreateLoad.sql
+1ba0bbd97de106a45b19023ef0de557eb8896ddcba9d7c50cd8372723b67c1f3  ./engines/hive/population/deprecated/hiveCreateLoad_double.sql
+9012b04daf02e87dc29e00462d4898808e00e4fea1b380541f766fe09e22fadf  ./engines/hive/population/deprecated/hiveCreateLoad_analyze.sql
+be558ebb05076de0785c52bbd1435a0f9bbddda50d7d4ba9bdd795142b7dbab5  ./engines/hive/population/deprecated/hiveCreateLoadTEXTFILE.sql
+5c9c4b8581c25ba284ebc1cf3d50bf3d782b2e4937d3419e86c65b2b9a284e18  ./engines/hive/refresh/deprecated/hiveRefreshCreateLoad_double.sql
+368c090e77a5be3928849a9f275112ccf0431acf2dafe8083d669be1a660659d  ./engines/hive/refresh/hiveRefreshCreateLoad.sql
+2286374db077d19d26d5bd6bf84206ae39cdb7cae12db9f318e8062ed4949f93  ./engines/hive/queries/q29/results/q29-result
+1431a187acc0d967e913731ea58fbfca11d0786f7ae9f49df5c6b50bea7a72cd  ./engines/hive/queries/q29/run.sh
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q29/engineLocalSettings.conf
+95b3ec1a8e081d481c71efcceb34650b8dd3b3acd053d8d8c750a3a10ace4662  ./engines/hive/queries/q29/q29.sql
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q29/engineLocalSettings.sql
+ae96f9029a9df3f8d8ee0387c4c984739811a391513847ce34edf546bed46aec  ./engines/hive/queries/q01/results/q01-result
+b4a7cc166b8a1e8f994783bc62eb11344be49f30bf85cf11218126d5c37ae7e1  ./engines/hive/queries/q01/run.sh
+c3279e1d1cfef552cf6efa872d43269340edc480ad9f69033dff83499b6d1af7  ./engines/hive/queries/q01/q01.sql
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q01/engineLocalSettings.conf
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q01/engineLocalSettings.sql
+57a239609d209cb7932f05a85c80a3c4fcf306de2554b663ccd2d588f3ad1744  ./engines/hive/queries/q25/results/q25-result
+aeb1ca46ce8c96b2c5f645cf04e8fa48c55ca0ba1d3f19c0eb6d007f707cb297  ./engines/hive/queries/q25/run.sh
+559c60ab3df02cd01b84d28ecb8095ac278fdb44a73932e339bb2aea7e3feee9  ./engines/hive/queries/q25/cleanup.sql
+3e49ab2e37800feebf2e5de74efe232eb7bc623bb7eeac6cb88450096b1c81fa  ./engines/hive/queries/q25/init-clusters/part-randomSeed
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q25/engineLocalSettings.conf
+887f757970cedf6e729e6f62f2a6328228e9892cece3969fd2d3a23f93933cb9  ./engines/hive/queries/q25/q25.sql
+4b2296044526031423cef3f7cd21e151d3d3998c32b10f877604a7ee929e8ac0  ./engines/hive/queries/q25/q25-mahout.sql
+d1dbc27395d30abb712a519bd263d234d7bd6b83dda756cb29ffc241fe33bcd1  ./engines/hive/queries/q25/engineLocalSettings.sql
+acf5485a656cfaa877acfc442d1e0ceb83afa7cacb24295ab3a9a427ccf31de8  ./engines/hive/queries/q26/q26-mahout.sql
+9520d8326de5ee4d65df706549023e216b057aea33f761949945eb77f11ad6c0  ./engines/hive/queries/q26/results/q26-result
+04b4958f62d17944ee6b8da5877f3dd68d9bdac72dd9fdbc51d2276d34efe807  ./engines/hive/queries/q26/run.sh
+255da75b551550726f1fd509d1978c59d738f646c52b7ad8fef383ebd4500b8a  ./engines/hive/queries/q26/cleanup.sql
+b1d6da6f5fea3b2be3af3a9647a05d80cf718e6d0bf4bc007c7c2a1b65e6ea22  ./engines/hive/queries/q26/init-clusters/part-randomSeed
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q26/engineLocalSettings.conf
+fff281eaabe7ed9cd4495352ae5b5b9497f7b2509eec3527c0e4879a664c625e  ./engines/hive/queries/q26/q26.sql
+d1dbc27395d30abb712a519bd263d234d7bd6b83dda756cb29ffc241fe33bcd1  ./engines/hive/queries/q26/engineLocalSettings.sql
+cf6004d0b88b3b0e8a8b1bade165699f312b758786dde195e4fd4ab2fa69f855  ./engines/hive/queries/q18/results/q18-result
+eb9a7a43f149274565a91566172f5293ce47224b7edbac061ecfdb7a0d7abdef  ./engines/hive/queries/q18/run.sh
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q18/engineLocalSettings.conf
+0472079e5dca380adf18280f9e5b103dfb717187c2cf1db40a54788f4d723416  ./engines/hive/queries/q18/q18.sql
+d1dbc27395d30abb712a519bd263d234d7bd6b83dda756cb29ffc241fe33bcd1  ./engines/hive/queries/q18/engineLocalSettings.sql
+f4775fb3bbac88e5a36a92cc2114c5e7ece9ae8f58e9a92201b93dd394d3ef71  ./engines/hive/queries/q11/results/q11-result
+03b288659f7a8200fdd7f6c818c98622da91ad673651072e03efbca7db3adc1f  ./engines/hive/queries/q11/run.sh
+10d72a60bbe7118f6393726d6b4223d09f9ec9b93f9b549404bf339687204de1  ./engines/hive/queries/q11/q11.sql
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q11/engineLocalSettings.conf
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q11/engineLocalSettings.sql
+c8cff91903e4d5884faad064523e517552bc361ae1eceaeb3c0d43910911f475  ./engines/hive/queries/q23/results/q23-result
+6aaef41ffa2abd808d72cb07409528d9e6a8adc4635626c1ee7edf01726e1d71  ./engines/hive/queries/q23/run.sh
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q23/engineLocalSettings.conf
+832791b85da76b9bc28df4a16eaa565a8e7075267b294605d158e0cbd77afd5a  ./engines/hive/queries/q23/q23.sql
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q23/engineLocalSettings.sql
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./engines/hive/queries/.gitignore
+0466ae92371034b60cecfbe2031a1f6bf35ccd7f48c68b26fb3a6db07a460d74  ./engines/hive/queries/q07/results/q07-result
+84d4c1eba556ef99062beae89afea9edeedfcdb6a2641b9ad7909153dc2ef303  ./engines/hive/queries/q07/run.sh
+b5bb923467e301d334a270260498a6580a8246d9150283ebbf417386f8459d67  ./engines/hive/queries/q07/q07.sql
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q07/engineLocalSettings.conf
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q07/engineLocalSettings.sql
+0e57bf8fe74258e74e60645ca3183c964d6abc43793b0ede829644fbeec9f088  ./engines/hive/queries/q28/q28.py
+4ae381e010acb7b05cf97abbd0f39de6cb00e85896a14312bff3ac7deb16d009  ./engines/hive/queries/q28/results/q28-result
+508d006e5af355f54377bf6f6e9a4b7002c105d8ec5d83e0fb6576b848c32d88  ./engines/hive/queries/q28/run.sh
+655dd49061fbc7c7365b7f2705ebe083f46492d84f6808476afd43c19c34eb91  ./engines/hive/queries/q28/cleanup.sql
+b8de8c8cfe4c1a2e308e6fddd299d9845f7a47dbf321f5a517bd0df8069f1851  ./engines/hive/queries/q28/q28.sql
+f2707a80f0562eaa99cbfa0a848a425f30c47f0d1d6af6b4976bc0126a0accdf  ./engines/hive/queries/q28/q28-mahout.sql
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q28/engineLocalSettings.conf
+d1dbc27395d30abb712a519bd263d234d7bd6b83dda756cb29ffc241fe33bcd1  ./engines/hive/queries/q28/engineLocalSettings.sql
+f77645f9e049cdc9fc8b2bf8047b4acf2a759903c34341761854b008997d660b  ./engines/hive/queries/q08/q08-testdata.txt
+9f5bb8317e77eb99d406a67609cfeba01f997f032e967d1f09514f38c39fbe8c  ./engines/hive/queries/q08/results/q08-result
+835dc2e118a0d4d32398bc4840b56903f2a3a6897553f6c4cd4c463ebb360876  ./engines/hive/queries/q08/run.sh
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q08/engineLocalSettings.conf
+c60efa72e6183495035ae81ab2834d5cf34a2f9d7eb837e03dfbc66be588b774  ./engines/hive/queries/q08/q08_filter_sales_with_reviews_viewed_before.py
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q08/engineLocalSettings.sql
+7b37a20073fd32d81e971c02b35465abf6e977418f72f082ed08df98dc083163  ./engines/hive/queries/q08/q08.sql
+1dab21448e8d91ee19584f30d45c1c9b808539f0f73179c04d7fdc0d2764de26  ./engines/hive/queries/q12/results/q12-result
+a54b9b40a60a878dc52e71408b722b6633fe42315118cf9fa59da114d2658a6d  ./engines/hive/queries/q12/run.sh
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q12/engineLocalSettings.conf
+01cb7cb7a707a34ee79e790c5c8283d54fcd29635eb74ff05d80b4673edc4d8b  ./engines/hive/queries/q12/q12.sql
+d1dbc27395d30abb712a519bd263d234d7bd6b83dda756cb29ffc241fe33bcd1  ./engines/hive/queries/q12/engineLocalSettings.sql
+5c93154a44c3f167a7881977365982ad32ad65f04aa7fb77366ece14b06a9671  ./engines/hive/queries/q13/results/q13-result
+0b1283815d9cef9e1f6fe5259632ff23e5b0a1cd422dd21b7d27a2335dd376a3  ./engines/hive/queries/q13/run.sh
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q13/engineLocalSettings.conf
+af4be9bba2ec477778000b77cb6e4e666c97461c2ee1fe406ee70dab8654c36c  ./engines/hive/queries/q13/q13.sql
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q13/engineLocalSettings.sql
+c63251d410d2aa4dfc988cd4c3a8df8c918057dafe8bda2de63a5cc6177da05f  ./engines/hive/queries/q14/q14.sql
+d540961391d0f508ae1fca8b118d938626e475efc3830b0fe42fe39038b1bbe5  ./engines/hive/queries/q14/results/q14-result
+03b288659f7a8200fdd7f6c818c98622da91ad673651072e03efbca7db3adc1f  ./engines/hive/queries/q14/run.sh
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q14/engineLocalSettings.conf
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q14/engineLocalSettings.sql
+8fd6885df5608ac6f7f9c01efa66088655845fe72e02527780081523262d9f4d  ./engines/hive/queries/q19/results/q19-result
+769cd1be2dc40bdca5d2a4e87c5db1e927683892f9d1ea37989f84ee60e462af  ./engines/hive/queries/q19/run.sh
+508d428babf18e3e4e193b2545fc4b14884f439fd18997eaeaf80ca6792cd2b9  ./engines/hive/queries/q19/note.txt
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q19/engineLocalSettings.conf
+c5c3c88b3d937fe2b063b2f2b2735aaeed5bcf9e632332bd9da0eae47741ad1f  ./engines/hive/queries/q19/q19.sql
+d1dbc27395d30abb712a519bd263d234d7bd6b83dda756cb29ffc241fe33bcd1  ./engines/hive/queries/q19/engineLocalSettings.sql
+483876c2bdc3be6327dcf35bf2d9aeccef73061c9f7678233aa481e55085d8c5  ./engines/hive/queries/q10/results/q10-result
+6632f0d60a2a660c6aed3db13b21587fb08b3a2ceaa5f883552632c21d236013  ./engines/hive/queries/q10/run.sh
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q10/engineLocalSettings.conf
+12fa51c0739068e1b6d477dafb6cb4fa4d46f593c7c5f9efcb9dca5c0d462977  ./engines/hive/queries/q10/q10.sql
+d1dbc27395d30abb712a519bd263d234d7bd6b83dda756cb29ffc241fe33bcd1  ./engines/hive/queries/q10/engineLocalSettings.sql
+6e99fa57b1f3645b4992ab3cfaa8b24abca0921cf2f575d63fca43cd84dd44e6  ./engines/hive/queries/Resources/opennlp-maxent-3.0.3.jar
+c60ea289df38cf94ae21ab93410f4c2d6c035391dc99a4c1eafae3c38a8a14c6  ./engines/hive/queries/Resources/bigbenchqueriesmr.jar
+01881562f80d8bf1f632cf06bc141437c2da4df0cf293a89736af826603b4eb6  ./engines/hive/queries/Resources/opennlp-tools-1.6.0.jar
+44ebd77738460767ea80d0419fea4ed210263c0553789d40f015c93cd876107c  ./engines/hive/queries/Resources/LICENSE
+e9a3e1c3952b400b85f1b2b6061e81826a60b87f4b520ce09ea08df9f26cad08  ./engines/hive/queries/Resources/bigbench-ml-spark.jar
+85269f487e607295613bdfe83341b727af431efac3587c5a67f140d03cf51699  ./engines/hive/queries/Resources/NOTICE
+ff2b6b8b88ebd20dd74a7e783e9db4a04bb6d76f98166ece12c2083196e35b49  ./engines/hive/queries/q17/results/q17-result
+84d4c1eba556ef99062beae89afea9edeedfcdb6a2641b9ad7909153dc2ef303  ./engines/hive/queries/q17/run.sh
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q17/engineLocalSettings.conf
+b33aa4acb63ed0ea174f476a474751e5903d7598fe7a68028b18bee7b42bb7d2  ./engines/hive/queries/q17/q17.sql
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q17/engineLocalSettings.sql
+5370c15b760d399f155ad56bf048193e70f45e2cc59ef6177537d53223194201  ./engines/hive/queries/q15/results/q15-result
+84d4c1eba556ef99062beae89afea9edeedfcdb6a2641b9ad7909153dc2ef303  ./engines/hive/queries/q15/run.sh
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q15/engineLocalSettings.conf
+ba1d379a425e710d2a90efef0202850deef0b44dfd0d5ce9135bf8970e61c9fc  ./engines/hive/queries/q15/q15.sql
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q15/engineLocalSettings.sql
+c0cb4d1233be52d9b4fefc6968f9cc03e1bdaf5488b98e67053044c55ab9eab4  ./engines/hive/queries/q24/results/q24-result
+9107e745712c7e4d545b0c832f8cbd2ef0d611e68e3fcfed8fc6b93d8ea950f5  ./engines/hive/queries/q24/run.sh
+4e7bfc26f5295ece99a940261fc9a76c98b2fbb372ef15899dadf86b683e4bcf  ./engines/hive/queries/q24/q24.sql
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q24/engineLocalSettings.conf
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q24/engineLocalSettings.sql
+92c6b7b9c60099bd3a6ca2c7c149b039ea22634cb9c7ef39022bb221a8805560  ./engines/hive/queries/q27/results/q27-result
+12540c1d79d11cb3908796f27c2bad21c8852dc3015038513bc42799827b308c  ./engines/hive/queries/q27/run.sh
+167de652cc5d4442e7ecc667bd1805d1efb177ab2e0a1e1feacebb44bd5d1396  ./engines/hive/queries/q27/q27.sql
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q27/engineLocalSettings.conf
+d1dbc27395d30abb712a519bd263d234d7bd6b83dda756cb29ffc241fe33bcd1  ./engines/hive/queries/q27/engineLocalSettings.sql
+0d178b6dbd8e24b376be15aae132f8594f214fe4fd652f961272a6b6d3b9cb02  ./engines/hive/queries/q16/results/q16-result
+84d4c1eba556ef99062beae89afea9edeedfcdb6a2641b9ad7909153dc2ef303  ./engines/hive/queries/q16/run.sh
+063540a142f4fc0df8390080803e65804cac8aabf0ca24756aedfcbe29ecb2ce  ./engines/hive/queries/q16/q16.sql
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q16/engineLocalSettings.conf
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q16/engineLocalSettings.sql
+ae4005f73e1c3b4245a70f7226e9ffafbb48ae117cc257540a0510ba41f51026  ./engines/hive/queries/q02/results/q02-result
+fdd905073b4c46436d251b16cba920e95891c06abc933dc1aef566819fc527bd  ./engines/hive/queries/q02/run.sh
+fd018ac5fa8bb459b6eeccd191c00aabbc33c742d36e069e6becf47c7e80eed7  ./engines/hive/queries/q02/q02.sql
+464cdd60c43cf5a54636c6eee586fdcf8262fcb212e36f7b6e3e44a27dcb9c80  ./engines/hive/queries/q02/q2-sessionize.py
+971e325293682c37ba07e21673ab2f1000e7304667c99e7dadad553defb73e82  ./engines/hive/queries/q02/q2-sessionize-testdata.txt
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q02/engineLocalSettings.conf
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q02/engineLocalSettings.sql
+dcfab4966c82cfe2db7312f78b8a75085dc1d65c221eeebe62fb2070938149c5  ./engines/hive/queries/q30/results/q30-result
+84d4c1eba556ef99062beae89afea9edeedfcdb6a2641b9ad7909153dc2ef303  ./engines/hive/queries/q30/run.sh
+72adb847fdae565a5161a56182cb65846d1465c83d71adc9d267936beac3563d  ./engines/hive/queries/q30/q30.sql
+971e325293682c37ba07e21673ab2f1000e7304667c99e7dadad553defb73e82  ./engines/hive/queries/q30/sciptTestdata.txt
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q30/engineLocalSettings.conf
+ca0832f6f2f720ed19c1d8c7409120611cb0d4e60875290f3ecc5ddacdf09f7d  ./engines/hive/queries/q30/q30-sessionize.py
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q30/engineLocalSettings.sql
+e421d1fc437632f34d259ba07515f6ed74d4d8d50402a3f9ce16a256fda80a0a  ./engines/hive/queries/q06/results/q06-result
+a0af2913b48786815258189bc22db6d266f39b4faec273b1c7538d46b4f2bfab  ./engines/hive/queries/q06/run.sh
+bc0f0ea5a7237cc2529e2b94a3ca1a3ed0470e44ef196ec08e497d537e340886  ./engines/hive/queries/q06/q06.sql
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q06/engineLocalSettings.conf
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q06/engineLocalSettings.sql
+b0b9c7ebaf158735b9de9a860146c59eae93d9e2d2cf3961b7abe82bc2009e55  ./engines/hive/queries/q04/q04.sql
+4f168a0e91d369fa68b1f9ffa2caa7a9bd8590f0b5450662db2c109579cb0c4c  ./engines/hive/queries/q04/q4_abandonedShoppingCarts.py
+5d43fc4b98938fad12641b4620e757b00d80de17a0715bf7ed816b33ac41df47  ./engines/hive/queries/q04/results/q04-result
+8b842e8f8d9f0095060b586ec0f7b694a2ebe2d78bfaae98341cccb232be15c1  ./engines/hive/queries/q04/run.sh
+971e325293682c37ba07e21673ab2f1000e7304667c99e7dadad553defb73e82  ./engines/hive/queries/q04/q4_sessionize-testdata.txt
+b52f0805d8c42ce6a6c7fe373362969fa73cedb201cea0d256c0f93cca68fc64  ./engines/hive/queries/q04/q4_sessionize.py
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q04/engineLocalSettings.conf
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q04/engineLocalSettings.sql
+7e97b5be8850c3af41c319139fe2adaf000b70584ea5f918182944419c78db58  ./engines/hive/queries/q09/results/q09-result
+03b288659f7a8200fdd7f6c818c98622da91ad673651072e03efbca7db3adc1f  ./engines/hive/queries/q09/run.sh
+2d8fa1c1370c1f6d4b5f4408d4a10a1f9ca0ec82b74bb847fafe484fea968bc4  ./engines/hive/queries/q09/q09.sql
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q09/engineLocalSettings.conf
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q09/engineLocalSettings.sql
+067a521e2d10b9328bc8926f151e53308f5976acebf5b51cc323a48fe1a33699  ./engines/hive/queries/q21/q21.sql
+56bf1b49a1c09284de537822b84cee05bc3110e02dbff211996ee8bae36fa309  ./engines/hive/queries/q21/results/q21-result
+1431a187acc0d967e913731ea58fbfca11d0786f7ae9f49df5c6b50bea7a72cd  ./engines/hive/queries/q21/run.sh
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q21/engineLocalSettings.conf
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q21/engineLocalSettings.sql
+3ff83322b1931d6cfd1bfb88b7b2deedecbff2aa2fce535610e3841b25513e7b  ./engines/hive/queries/q03/results/q03-result
+b4a7cc166b8a1e8f994783bc62eb11344be49f30bf85cf11218126d5c37ae7e1  ./engines/hive/queries/q03/run.sh
+171f147a6336791ae1ca1285dc090413a0604c772a004b14d5a2e5c3e37e8846  ./engines/hive/queries/q03/q03.sql
+cf98ed12c293ab0a98244da576ac47669bcedb414cc170cee0284e24985e66a6  ./engines/hive/queries/q03/q03_filterLast_N_viewedItmes_within_y_days.py
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q03/engineLocalSettings.conf
+8e390c9e5a816377510bd9ef508f34827e98c930868a6ec5291c3cd17d312ffd  ./engines/hive/queries/q03/q03_filterLast_N_viewedItmes_within_y_days-testdata.txt
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q03/engineLocalSettings.sql
+981c1acfd54a84315db36d8ce0e6e542ad980e7cf5898274521f319feeb4c8fc  ./engines/hive/queries/q20/q20-mahout.sql
+24ebcfbb0b502b99ce0a1fc975aeff25471a56b6e2e01f80d885cf139bee7580  ./engines/hive/queries/q20/results/q20-result
+9b4ae21591576c8b1e670ea54dc813d082078d42f604bfd43db2b7695c8f4ed2  ./engines/hive/queries/q20/run.sh
+255da75b551550726f1fd509d1978c59d738f646c52b7ad8fef383ebd4500b8a  ./engines/hive/queries/q20/cleanup.sql
+beed1372159120ba6b314e6ce608faa6338abc0c54be5c81ee095a05f93d5710  ./engines/hive/queries/q20/note.txt
+ad5c128978a4c4eb4e7da61c77c7170b99cabf3f719430601541444522ae1545  ./engines/hive/queries/q20/init-clusters/part-randomSeed
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q20/engineLocalSettings.conf
+f6123ab49e99d131cb4a253a623440da63f68c73c999f5edeba74083dc0f48fe  ./engines/hive/queries/q20/q20.sql
+d1dbc27395d30abb712a519bd263d234d7bd6b83dda756cb29ffc241fe33bcd1  ./engines/hive/queries/q20/engineLocalSettings.sql
+1f915ed8693964ed859fd996a64927b1e2ffbb5767964e34a8dd3a70c2fabe97  ./engines/hive/queries/q05/results/q05-result
+2e18b50d11a3614738485bdc9fcdf600a177086236fc993023dfbe6c39546f69  ./engines/hive/queries/q05/run.sh
+255da75b551550726f1fd509d1978c59d738f646c52b7ad8fef383ebd4500b8a  ./engines/hive/queries/q05/cleanup.sql
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q05/engineLocalSettings.conf
+2af3cc1266310f6e75e7fdf7c4176954ecd171b24497130bc72243d18092d524  ./engines/hive/queries/q05/q05-mahout.sql
+a409a77be49b5401ea476ead0412b11d9f8b7cd63a4265dc21db846bce9fc8a8  ./engines/hive/queries/q05/q05.sql
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q05/engineLocalSettings.sql
+f3f6972551f61be92ab6e12c6fc9e7987127b97972ee1c7592b66fc9dfd2df32  ./engines/hive/queries/q22/results/q22-result
+b94c5252602830c7626a1a2d0f6e84b4b22c3870fdc3e8b6188167592470fb7d  ./engines/hive/queries/q22/run.sh
+6f931b62c2cfe5f361cab7629b369c177fc1f1ee51d91770f684a61a5472ee70  ./engines/hive/queries/q22/q22.sql
+4f5a5790f04e1ae6d1e1e1a072c311069e627c64aae9b102c4dd4f8d8f4550b1  ./engines/hive/queries/q22/engineLocalSettings.conf
+ab9fe63221f4d519b17d6970c6ae35aee50e65cee89f363e83dc21ae370cd45f  ./engines/hive/queries/q22/engineLocalSettings.sql
+dcbc542cbe02fad57d98ccd35ec927a05853bd028f820e7fe766759570333e82  ./engines/hive/bin/validateQuery
+6949b47ea4d05b0e925d237c0534afcdad3595daa1018b29a89f12e9a03e7d0f  ./engines/hive/bin/showValidation
+72a28a4f3457f76bdcd0a5edd1379bb7a4d005ca2eb9a60541bb377774135a95  ./engines/hive/bin/cleanAll
+a3517139513527a0ed4e7c91a5e928638af8dfb752b36df4c56885033b7f5641  ./engines/hive/bin/runQuery
+8e263a80fcce9d5672e5295af03ca6bc6e5bfc41a5966abc2e796620d9259fa7  ./engines/hive/bin/cleanData
+60235059a8f7ff77fbe8b82714b0598ceafd2be172b9a745004683491fea6bbc  ./engines/hive/bin/showTimes
+7f77e51c864f7126b4352288860a3bc8fefc46c948bd50d4d69f52768838364c  ./engines/hive/bin/cleanQuery
+f4119b2c7e3ce5e86c7286efd5443e0a87677a6fa5410abfc35dc9a47b981839  ./engines/hive/bin/showErrors
+c5a5447e93675b550c2a59a5000e401c066c53f33635a0fedff80ea34b69fe8a  ./engines/hive/bin/populateMetastore
+1af0cb1070930ea79a58ff1aad7cb52d7afe4b55e02cd08bd671e110f0e60ac1  ./engines/hive/bin/dataGen
+46a1aef8271c0ab3ac40007bc4f91e8f00b57e9ec2a048bd424420cc408764f0  ./engines/hive/bin/refreshMetastore
+4c46c1ec506afde8dc7408a08224a95290e8cd44571d6aa75f3733d821f98165  ./engines/hive/bin/cleanMetastore
+e39dc1cf9727d07833457ce043e73bdb161b9f77311d360202b40f8120812a6b  ./engines/spark_sql/conf/engineSettings.conf
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./engines/biginsights/.gitignore
+019b2dec79f9da6f02ed53b31884ecdd4d3a2204cec36fd127808cc310562de3  ./engines/biginsights/wip.txt
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./engines/impala/.gitignore
+b993c2a5b3efdd1769edf62e3f085cc23ac16bc4cf48f73f7e8d4d7028b05699  ./engines/impala/wip.txt

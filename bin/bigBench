@@ -1,0 +1,412 @@
+#!/usr/bin/env bash
+
+#
+# Copyright (C) 2016 Transaction Processing Performance Council (TPC) and/or
+# its contributors.
+#
+# This file is part of a software package distributed by the TPC.
+#
+# The contents of this file have been developed by the TPC, and/or have been
+# licensed to the TPC under one or more contributor license agreements.
+#
+#  This file is subject to the terms and conditions outlined in the End-User
+#  License Agreement (EULA) which can be found in this distribution (EULA.txt)
+#  and is available at the following URL:
+#  http://www.tpc.org/TPC_Documents_Current_Versions/txt/EULA.txt
+#
+# Unless required by applicable law or agreed to in writing, this software
+# is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+# ANY KIND, either express or implied, and the user bears the entire risk as
+# to quality and performance as well as the entire cost of service or repair
+# in case of defect.  See the EULA for more details.
+#
+
+#
+#Copyright 2015 Intel Corporation All Rights Reserved.
+#
+#The source code contained or described herein and all documents related to the source code ("Material") are owned by Intel Corporation or its suppliers or licensors. Title to the Material remains with Intel Corporation or its suppliers and licensors. The Material contains trade secrets and proprietary and confidential information of Intel or its suppliers and licensors. The Material is protected by worldwide copyright and trade secret laws and treaty provisions. No part of the Material may be used, copied, reproduced, modified, published, uploaded, posted, transmitted, distributed, or disclosed in any way without Intel's prior express written permission.
+#
+#No license under any patent, copyright, trade secret or other intellectual property right is granted to or conferred upon you by disclosure or delivery of the Materials, either expressly, by implication, inducement, estoppel or otherwise. Any license under such intellectual property rights must be express and approved by Intel in writing.
+
+## ===================================================
+## function definitions
+## ===================================================
+showGlobalHelp () {
+  echo "Usage: `basename $0` runBenchmark [options]"
+  echo
+  echo "General options:"
+  echo -e "-d\tdatabase to use (default: $BIG_BENCH_DEFAULT_DATABASE)"
+  echo -e "-e\tengine to use (default: $BIG_BENCH_DEFAULT_ENGINE)"
+  echo -e "-f\tscale factor for data set (default: $BIG_BENCH_DEFAULT_SCALE_FACTOR)"
+  echo -e "-h\tshow this help"
+  echo -e "-m\tmap tasks for data generation (default: $BIG_BENCH_DEFAULT_MAP_TASKS)"
+  echo -e "-s\tnumber of parallel streams (default: $BIG_BENCH_DEFAULT_NUMBER_OF_PARALLEL_STREAMS)"
+  echo
+  echo "Driver specific options:"
+  echo -e "-a\tdry-run - pretend command execution"
+  echo -e "-b\tprint stdout of called bash scripts during execution"
+  echo -e "-i\tphases the driver performs (see $BIG_BENCH_CONF_DIR/bigBench.properties for details on format)"
+  echo -e "-j\tqueries the driver runs (see $BIG_BENCH_CONF_DIR/bigBench.properties for details on format)"
+  echo
+  echo "Take a look into $BIG_BENCH_CONF_DIR/bigBench.properties for a well documented description how to configure the driver"
+  echo
+  echo "Expert mode:"
+  echo -e "-U\tunlock expert mode - WARNING: run modules manually only if you know what you are doing!"
+  echo
+
+  if [ "$BIG_BENCH_EXPERT_MODE" -ne 0 ]
+  then
+    # INTERNAL USE ONLY
+    echo "EXPERT MODE ACTIVE"
+    echo
+    echo "WARNING - INTERNAL USE ONLY:"
+    echo "Only set manually if you know what you are doing!"
+    echo "Ignoring them is probably the best solution"
+    echo 
+    echo "Running individual modules:"
+    echo "Usage: `basename $0` module [options]"
+    echo
+    echo -e "-D\tquery part to debug. Most queries only have a single part. A few of the queries are multistage with individual parts to step through for debug purposes"
+    echo -e "-p\tbenchmark phase to use (default: $BIG_BENCH_DEFAULT_BENCHMARK_PHASE)"
+    echo -e "-q\tquery number to run"
+    echo -e "-t\tstream number for query run"
+    echo -e "-v\tsql script for metastore population (default: $BIG_BENCH_POPULATE_METASTORE_FILE)"
+    echo -e "-w\tsql script for metastore refresh (default: $BIG_BENCH_REFRESH_METASTORE_FILE)"
+    echo -e "-y\tfile with additional user defined query parameters (global: $BIG_BENCH_QUERY_PARAMS_FILE)"
+    echo -e "-z\tfile with additional user defined engine settings (global: $BIG_BENCH_ENGINE_SETTINGS_FILE)"
+    echo
+    echo "List of available modules:"
+    ls -1 "$BIG_BENCH_ENGINE_BIN_DIR"
+  fi
+  exit 0
+}
+
+runCmdWithErrorCheck () {
+  "$@"
+  for RETURN_CODE in ${PIPESTATUS[@]}
+  do
+    if [[ $RETURN_CODE -ne 0 ]]
+    then
+      if [[ $BIG_BENCH_STOP_AFTER_FAILURE -eq 1 ]]
+      then
+        echo "An error occured while running command:"
+        echo "=========="
+        echo "$@"
+        echo "=========="
+        echo "Please check the log files for details"
+        exit $RETURN_CODE
+      else
+        return $RETURN_CODE
+      fi
+    fi
+  done
+}
+
+## ===================================================
+## determine base directory
+## ===================================================
+cd "$(dirname ${BASH_SOURCE[0]})/.."
+export BIG_BENCH_HOME="$PWD"
+cd "$OLDPWD"
+
+## ===================================================
+## BEGIN OF SETTINGS
+## ===================================================
+export BIG_BENCH_VERSION="1.2"
+export BIG_BENCH_BIN_DIR="$BIG_BENCH_HOME/bin"
+export BIG_BENCH_CONF_DIR="$BIG_BENCH_HOME/conf"
+export BIG_BENCH_DATA_GENERATOR_DIR="$BIG_BENCH_HOME/data-generator"
+export BIG_BENCH_TOOLS_DIR="$BIG_BENCH_HOME/tools"
+export BIG_BENCH_LOGS_DIR="$BIG_BENCH_HOME/logs"
+
+## ===================================================
+## Data generation options
+## ===================================================
+
+#do not touch lines below, unless you are sure you need to tamper with that
+export BIG_BENCH_DATAGEN_CORE_SITE="$BIG_BENCH_HADOOP_CONF/core-site.xml"
+export BIG_BENCH_DATAGEN_HDFS_SITE="$BIG_BENCH_HADOOP_CONF/hdfs-site.xml"
+
+## ===================================================
+## END OF SETTINGS
+## ===================================================
+
+## ===================================================
+## Set permissions
+## ===================================================
+find "$BIG_BENCH_HOME" -name '*.sh' -exec chmod 755 {} +
+find "$BIG_BENCH_HOME" -name '*.jar' -exec chmod 755 {} +
+find "$BIG_BENCH_HOME" -name '*.py' -exec chmod 755 {} +
+
+## ===================================================
+## source user configurable settings
+## ===================================================
+USER_SETTINGS="$BIG_BENCH_CONF_DIR/userSettings.conf"
+if [ ! -f "$USER_SETTINGS" ]
+then
+  echo "User settings file $USER_SETTINGS not found"
+  exit 1
+else
+  source "$USER_SETTINGS"
+fi
+
+## ===================================================
+## all static settings sourced, start checking runtime settings
+## ===================================================
+
+## ===================================================
+## parse command line arguments
+## ===================================================
+# the first parameter after the options must be the module name
+
+# if there are no parameters or the first parameter starts with "-"
+# the user has not provided any module to run
+if [[ $# -eq 0 || "`echo "$1" | cut -c1`" = "-" ]]
+then
+  export MODULE_NAME=""
+  SHOW_HELP="1"
+else
+  export MODULE_NAME="$1"
+  shift
+fi
+
+export LIST_OF_USER_OPTIONS="$@"
+
+# parse remaining options
+while getopts ":d:D:e:f:hm:p:q:s:t:Uv:w:y:z:abi:j:" OPT; do
+  case "$OPT" in
+    # script options
+    d)
+      #echo "-d was triggered, Parameter: $OPTARG" >&2
+      USER_DATABASE="$OPTARG"
+    ;;
+    D)
+      #echo "-D was triggered, Parameter: $OPTARG" >&2
+      DEBUG_QUERY_PART="$OPTARG"
+    ;;
+    e)
+      #echo "-e was triggered, Parameter: $OPTARG" >&2
+      USER_ENGINE="$OPTARG"
+    ;;
+    f)
+      #echo "-f was triggered, Parameter: $OPTARG" >&2
+      USER_SCALE_FACTOR="$OPTARG"
+    ;;
+    h)
+      #echo "-h was triggered, Parameter: $OPTARG" >&2
+      SHOW_HELP="1"
+    ;;
+    m)
+      #echo "-m was triggered, Parameter: $OPTARG" >&2
+      USER_MAP_TASKS="$OPTARG"
+    ;;
+    p)
+      #echo "-p was triggered, Parameter: $OPTARG" >&2
+      USER_BENCHMARK_PHASE="$OPTARG"
+    ;;
+    q)
+      #echo "-q was triggered, Parameter: $OPTARG" >&2
+      QUERY_NUMBER="$OPTARG"
+    ;;
+    s)
+      #echo "-t was triggered, Parameter: $OPTARG" >&2
+      USER_NUMBER_OF_PARALLEL_STREAMS="$OPTARG"
+    ;;
+    t)
+      #echo "-s was triggered, Parameter: $OPTARG" >&2
+      USER_STREAM_NUMBER="$OPTARG"
+    ;;
+    U)
+      #echo "-U was triggered, Parameter: $OPTARG" >&2
+      USER_EXPERT_MODE="1"
+    ;;
+    v)
+      #echo "-v was triggered, Parameter: $OPTARG" >&2
+      USER_POPULATE_FILE="$OPTARG"
+    ;;
+    w)
+      #echo "-w was triggered, Parameter: $OPTARG" >&2
+      USER_REFRESH_FILE="$OPTARG"
+    ;;
+    y)
+      #echo "-y was triggered, Parameter: $OPTARG" >&2
+      USER_QUERY_PARAMS_FILE="$OPTARG"
+    ;;
+    z)
+      #echo "-z was triggered, Parameter: $OPTARG" >&2
+      USER_ENGINE_SETTINGS_FILE="$OPTARG"
+    ;;
+    # driver options
+    a)
+      #echo "-a was triggered, Parameter: $OPTARG" >&2
+      export USER_PRETEND_MODE="1"
+    ;;
+    b)
+      #echo "-b was triggered, Parameter: $OPTARG" >&2
+      export USER_PRINT_STD_OUT="1"
+    ;;
+    i)
+      #echo "-i was triggered, Parameter: $OPTARG" >&2
+      export USER_DRIVER_WORKLOAD="$OPTARG"
+    ;;
+    j)
+      #echo "-j was triggered, Parameter: $OPTARG" >&2
+      export USER_DRIVER_QUERIES_TO_RUN="$OPTARG"
+    ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+    ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+  ;;
+  esac
+done
+
+# remove options from parameter list
+shift $((OPTIND-1))
+
+export BIG_BENCH_EXPERT_MODE="${USER_EXPERT_MODE:-"0"}"
+export SHOW_HELP="${SHOW_HELP:-"0"}"
+
+# global shared variables
+export BIG_BENCH_DATABASE="${USER_DATABASE:-"$BIG_BENCH_DEFAULT_DATABASE"}"
+export BIG_BENCH_ENGINE="${USER_ENGINE:-"$BIG_BENCH_DEFAULT_ENGINE"}"
+export BIG_BENCH_MAP_TASKS="${USER_MAP_TASKS:-"$BIG_BENCH_DEFAULT_MAP_TASKS"}"
+export BIG_BENCH_SCALE_FACTOR="${USER_SCALE_FACTOR:-"$BIG_BENCH_DEFAULT_SCALE_FACTOR"}"
+export BIG_BENCH_NUMBER_OF_PARALLEL_STREAMS="${USER_NUMBER_OF_PARALLEL_STREAMS:-"$BIG_BENCH_DEFAULT_NUMBER_OF_PARALLEL_STREAMS"}"
+export BIG_BENCH_BENCHMARK_PHASE="${USER_BENCHMARK_PHASE:-"$BIG_BENCH_DEFAULT_BENCHMARK_PHASE"}"
+export BIG_BENCH_STREAM_NUMBER="${USER_STREAM_NUMBER:-"0"}"
+
+export BIG_BENCH_ENGINE_DIR="$BIG_BENCH_HOME/engines/$BIG_BENCH_ENGINE"
+export BIG_BENCH_ENGINE_CONF_DIR="$BIG_BENCH_ENGINE_DIR/conf"
+
+# test if numeric values are indeed numeric
+if [ -n "`echo "$BIG_BENCH_MAP_TASKS" | sed -e 's/[0-9]*//g'`" ]
+then
+  echo "$BIG_BENCH_MAP_TASKS is not a number"
+fi
+
+if [ -n "`echo "$BIG_BENCH_SCALE_FACTOR" | sed -e 's/[0-9]*//g'`" ]
+then
+  echo "$BIG_BENCH_SCALE_FACTOR is not a number"
+fi
+
+if [ -n "`echo "$BIG_BENCH_NUMBER_OF_PARALLEL_STREAMS" | sed -e 's/[0-9]*//g'`" ]
+then
+  echo "$BIG_BENCH_NUMBER_OF_PARALLEL_STREAMS is not a number"
+fi
+
+if [ -n "`echo "$BIG_BENCH_STREAM_NUMBER" | sed -e 's/[0-9]*//g'`" ]
+then
+  echo "$BIG_BENCH_STREAM_NUMBER is not a number"
+fi
+
+export BIG_BENCH_LOADING_STAGE_LOG="$BIG_BENCH_LOGS_DIR/populateMetastore-${BIG_BENCH_BENCHMARK_PHASE}.log"
+export BIG_BENCH_DATAGEN_STAGE_LOG="$BIG_BENCH_LOGS_DIR/dataGeneration-${BIG_BENCH_BENCHMARK_PHASE}.log"
+
+## ===================================================
+## check for engine existence
+## ===================================================
+if [ ! -d "$BIG_BENCH_ENGINE_DIR" ]
+then
+  echo "Engine directory $BIG_BENCH_ENGINE_DIR not found. Aborting script..."
+  exit 1
+fi
+
+if [ ! -d "$BIG_BENCH_ENGINE_CONF_DIR" ]
+then
+  echo "Engine configuration directory $BIG_BENCH_ENGINE_CONF_DIR not found. Aborting script..."
+  exit 1
+fi
+
+## ===================================================
+## source engine configuration
+## ===================================================
+ENGINE_SETTINGS="$BIG_BENCH_ENGINE_CONF_DIR/engineSettings.conf"
+if [ ! -f "$ENGINE_SETTINGS" ]
+then
+  echo "Engine settings file $ENGINE_SETTINGS not found"
+  exit 1
+else
+  source "$ENGINE_SETTINGS"
+fi
+
+## ===================================================
+## check variables defined in engineSettings.conf
+## ===================================================
+if [ ! -d "$BIG_BENCH_ENGINE_BIN_DIR" ]
+then
+  echo "Engine configuration directory $BIG_BENCH_ENGINE_BIN_DIR not found. Aborting script..."
+  exit 1
+fi
+
+# as the module's bin directory is known at this point, the help can list all modules within that directory
+# if the user has not specified a module, stop execution here
+if [[ "$SHOW_HELP" -eq 1 && -z "$MODULE_NAME" ]]
+then
+  echo "*****"
+  echo "***** Error: no module specified."
+  echo "***** The module has to be the first parameter of this script"
+  echo "*****"
+  echo
+  showGlobalHelp
+fi
+
+## ===================================================
+## check for module existence and correctness
+## ===================================================
+export MODULE="$BIG_BENCH_ENGINE_BIN_DIR/$MODULE_NAME"
+if [ -f "$MODULE" ]
+then
+  source "$MODULE"
+else
+  export MODULE="$BIG_BENCH_BIN_DIR/$MODULE_NAME"
+  if [ -f "$MODULE" ]
+  then
+    source "$MODULE"
+  else
+    echo "Module $MODULE not found, aborting script."
+    exit 1
+  fi
+fi
+
+# check if the module's run method was implemented properly
+MODULE_RUN_METHOD="runModule"
+if ! declare -F "$MODULE_RUN_METHOD" > /dev/null 2>&1
+then
+  echo "$MODULE_RUN_METHOD was not implemented, aborting script"
+  exit 1
+fi
+
+# check if the module's help method was implemented properly
+MODULE_HELP_METHOD="helpModule"
+if ! declare -F "$MODULE_HELP_METHOD" > /dev/null 2>&1
+then
+  echo "$MODULE_HELP_METHOD was not implemented, aborting script"
+  exit 1
+fi
+
+# check if the engine's run method was implemented properly
+ENGINE_RUN_METHOD="runEngineCmd"
+if ! declare -F "$ENGINE_RUN_METHOD" > /dev/null 2>&1
+then
+  echo "$ENGINE_RUN_METHOD was not implemented, aborting script"
+  exit 1
+fi
+
+# run module
+if [[ "$BIG_BENCH_EXPERT_MODE" -eq 1 || "$MODULE_NAME" = "runBenchmark" ]]
+then
+  if [ "$SHOW_HELP" -eq 1 ]
+  then
+    "$MODULE_HELP_METHOD"
+  else
+    runCmdWithErrorCheck "$MODULE_RUN_METHOD"
+  fi
+else
+  echo "Running module $MODULE_NAME directly is only supported in expert mode"
+  echo "Normal mode only supports runBenchmark module"
+  exit 1
+fi

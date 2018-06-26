@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+#
+# Copyright (C) 2016 Transaction Processing Performance Council (TPC) and/or
+# its contributors.
+#
+# This file is part of a software package distributed by the TPC.
+#
+# The contents of this file have been developed by the TPC, and/or have been
+# licensed to the TPC under one or more contributor license agreements.
+#
+#  This file is subject to the terms and conditions outlined in the End-User
+#  License Agreement (EULA) which can be found in this distribution (EULA.txt)
+#  and is available at the following URL:
+#  http://www.tpc.org/TPC_Documents_Current_Versions/txt/EULA.txt
+#
+# Unless required by applicable law or agreed to in writing, this software
+# is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+# ANY KIND, either express or implied, and the user bears the entire risk as
+# to quality and performance as well as the entire cost of service or repair
+# in case of defect.  See the EULA for more details.
+#
+
+#
+#Copyright 2015 Intel Corporation All Rights Reserved.
+#
+#The source code contained or described herein and all documents related to the source code ("Material") are owned by Intel Corporation or its suppliers or licensors. Title to the Material remains with Intel Corporation or its suppliers and licensors. The Material contains trade secrets and proprietary and confidential information of Intel or its suppliers and licensors. The Material is protected by worldwide copyright and trade secret laws and treaty provisions. No part of the Material may be used, copied, reproduced, modified, published, uploaded, posted, transmitted, distributed, or disclosed in any way without Intel's prior express written permission.
+#
+#No license under any patent, copyright, trade secret or other intellectual property right is granted to or conferred upon you by disclosure or delivery of the Materials, either expressly, by implication, inducement, estoppel or otherwise. Any license under such intellectual property rights must be express and approved by Intel in writing.
+
+helpModule () {
+  echo "This module generates a zip file of all logs available in $BIG_BENCH_LOGS_DIR"
+  echo
+  echo "Options:"
+  echo -e "-h\tshow this help"
+}
+
+runModule () {
+  if [ -d "$BIG_BENCH_LOGS_DIR" ]
+  then
+    CURRENT_DATE="`date +%Y%m%d-%H%M%S`"
+    CURRENT_LOG_FOLDER_RELATIVE="logs-$CURRENT_DATE-$BIG_BENCH_ENGINE-sf$BIG_BENCH_SCALE_FACTOR"
+    CURRENT_LOG_FOLDER="$BIG_BENCH_LOGS_DIR/$CURRENT_LOG_FOLDER_RELATIVE"
+    RUN_LOGS_FOLDER="$CURRENT_LOG_FOLDER/run-logs"
+    BIG_BENCH_CONFIGURATION_FOLDER="$CURRENT_LOG_FOLDER/bigBench-configs"
+
+    runCmdWithErrorCheck mkdir "$CURRENT_LOG_FOLDER"
+    runCmdWithErrorCheck mkdir "$RUN_LOGS_FOLDER"
+    runCmdWithErrorCheck mkdir "$BIG_BENCH_CONFIGURATION_FOLDER"
+
+    # move all run logs to run-logs folder
+    # exclude special log file times.csv as this file has to be continuously updated
+    find "$BIG_BENCH_LOGS_DIR" -maxdepth 1 -type f ! -name times.csv ! -name 'logs-*.zip' ! -name '*.lck' -exec mv {} "$RUN_LOGS_FOLDER" \;
+
+    # copy all configuration files of the bigBench kit to the configuration folder
+    cp -a "$BIG_BENCH_CONF_DIR" "$BIG_BENCH_CONFIGURATION_FOLDER/"
+    cp -a "$BIG_BENCH_ENGINE_DIR" "$BIG_BENCH_CONFIGURATION_FOLDER/"
+    # delete unnecessary files and folders from the configuration folder copy
+    find "$BIG_BENCH_CONFIGURATION_FOLDER" -type d -name Resources -exec rm -rf {} +
+    find "$BIG_BENCH_CONFIGURATION_FOLDER" -type d -name results -exec rm -rf {} +
+    find "$BIG_BENCH_CONFIGURATION_FOLDER" -type d -name deprecated -exec rm -rf {} +
+
+    # zip the log folder
+    cd "$BIG_BENCH_LOGS_DIR"
+    runCmdWithErrorCheck zip -q -r "$CURRENT_LOG_FOLDER_RELATIVE.zip" "$CURRENT_LOG_FOLDER_RELATIVE"
+  fi
+}

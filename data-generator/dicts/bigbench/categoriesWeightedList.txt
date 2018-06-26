@@ -1,0 +1,252 @@
+create ratingWeights;
+set types = (long, long : long, long);
+set weights = 2;
+add (1, 1: 1, 2936529);
+add (2, 2: 1, 2011154);
+add (3, 3: 1, 3382350);
+add (4, 4: 1, 7923608);
+add (5, 5: 1, 25376186);
+
+-- all weights sum: 2099253
+create maincategories;
+set types = (string, long : long, long);
+set names = (majorCategory, major_ID: uniform, weighted);
+set weights = 2;
+add ("Home & Kitchen",           1: 1 , 79006);
+add ("Music",                    2: 1 , 556814);
+add ("Books",                    3: 1 , 929263);
+add ("Clothing & Accessories",   4: 1 , 66370);
+add ("Electronics",              5: 1 , 82067);
+add ("Tools & Home Improvement", 6: 1 , 51004);
+add ("Toys & Games",             7: 1 , 53600);
+add ("Movies & TV",              8: 1 , 212836);
+add ("Sports & Outdoors",        9: 1 , 68293);
+
+
+
+--accumulated weights per major categories in subcategories -- different from list "maincategories"
+--Home & Kitchen            78493
+--Music                   1280336
+--Books                    849342
+--Clothing & Accessories   102710
+--Electronics              112194
+--Tools & Home Improvement  62626
+--Toys & Games              60509
+--Movies & TV              213030
+--Sports & Outdoor          73584
+create subcategories;
+set names = ("minorCategory", "minor_ID", "majorCategory", "major_ID", "CombinedName(markovChain)" : "uniform", "weighted");
+set types = (string, long, string, long, string : long, long);
+set weights = 2;
+add ("Kitchen & Dining",           1,  "Home & Kitchen",           1, "Home & Kitchen_Kitchen & Dining"                  : 1, 40462);
+add ("Furniture",                  2,  "Home & Kitchen",           1, "Home & Kitchen_Furniture"                         : 1, 5465);
+add ("Tabletop",                   3,  "Home & Kitchen",           1, "Home & Kitchen_Tabletop"                          : 1, 7839);
+add ("Bedding",                    4,  "Home & Kitchen",           1, "Home & Kitchen_Bedding"                           : 1, 6910);
+add ("Kitchen Utensils & Gadgets", 5,  "Home & Kitchen",           1, "Home & Kitchen_Kitchen Utensils & Gadgets"        : 1, 7589);
+add ("Home Decor",                 6,  "Home & Kitchen",           1, "Home & Kitchen_Home Dcor"                         : 1, 10228);
+add ("Classical",                  1,  "Music",                    2, "Music_Classical"                                  : 1, 69557);
+add ("Blues",                      2,  "Music",                    2, "Music_Blues"                                      : 1, 31622);
+add ("Pop",                        3,  "Music",                    2, "Music_Pop"                                        : 1, 349275);
+add ("R&B",                        4,  "Music",                    2, "Music_R&B"                                        : 1, 53602);
+add ("World Music",                5,  "Music",                    2, "Music_World Music"                                : 1, 97596);
+add ("Jazz",                       6,  "Music",                    2, "Music_Jazz"                                       : 1, 77875);
+add ("Dance & Electronic",         7,  "Music",                    2, "Music_Dance & Electronic"                         : 1, 64961);
+add ("Miscellaneous",              8,  "Music",                    2, "Music_Miscellaneous"                              : 1, 49847);
+add ("Rap & Hip-Hop",              9,  "Music",                    2, "Music_Rap & Hip-Hop"                              : 1, 31036);
+add ("Country",                    10, "Music",                    2, "Music_Country"                                    : 1, 32719);
+add ("Rock",                       11, "Music",                    2, "Music_Rock"                                       : 1, 191877);
+add ("Folk",                       12, "Music",                    2, "Music_Folk"                                       : 1, 36162);
+add ("Hard Rock & Metal",          13, "Music",                    2, "Music_Hard Rock & Metal"                          : 1, 41427);
+add ("Latin Music",                14, "Music",                    2, "Music_Latin Music"                                : 1, 32131);
+add ("Alternative Rock",           15, "Music",                    2, "Music_Alternative Rock"                           : 1, 84283);
+add ("Classic Rock",               16, "Music",                    2, "Music_Classic Rock"                               : 1, 36366);
+add ("Literature & Fiction",       1,  "Books",                    3, "Books_Literature & Fiction"                       : 1, 195050);
+add ("NO_SUB_CAT",                 2,  "Books",                    3, "Books_NO_SUB_CAT"                                 : 1, 233917);
+add ("Education & Reference",      3,  "Books",                    3, "Books_Education & Reference"                      : 1, 153495);
+add ("New",                        4,  "Books",                    3, "Books_New"                                        : 1, 133440);
+add ("Used & Rental Textbooks",    5,  "Books",                    3, "Books_Used & Rental Textbooks"                    : 1, 133440);
+add ("Men",                        1,  "Clothing & Accessories",   4, "Clothing & Accessories_Men"                       : 1, 25255);
+add ("Tops & Tees",                2,  "Clothing & Accessories",   4, "Clothing & Accessories_Tops & Tees"               : 1, 7672);
+add ("Dress Shirts",               3,  "Clothing & Accessories",   4, "Clothing & Accessories_Dress Shirts"              : 1, 4730);
+add ("Women",                      4,  "Clothing & Accessories",   4, "Clothing & Accessories_Women"                     : 1, 16316);
+add ("Intimates",                  5,  "Clothing & Accessories",   4, "Clothing & Accessories_Intimates"                 : 1, 6476);
+add ("Accessories",                6,  "Clothing & Accessories",   4, "Clothing & Accessories_Accessories"               : 1, 6014);
+add ("Active",                     7,  "Clothing & Accessories",   4, "Clothing & Accessories_Active"                    : 1, 4418);
+add ("NO_SUB_CAT",                 8,  "Clothing & Accessories",   4, "Clothing & Accessories_NO_SUB_CAT"                : 1, 11977);
+add ("Novelty & Special Use",      9,  "Clothing & Accessories",   4, "Clothing & Accessories_Novelty & Special Use"     : 1, 11679);
+add ("Bras",                       10, "Clothing & Accessories",   4, "Clothing & Accessories_Bras"                      : 1, 3871);
+add ("Pants",                      11, "Clothing & Accessories",   4, "Clothing & Accessories_Pants"                     : 1, 4302);
+add ("Portable Audio & Video",     1,  "Electronics",              5, "Electronics_Portable Audio & Video"               : 1, 7809);
+add ("Camera & Photo",             2,  "Electronics",              5, "Electronics_Camera & Photo"                       : 1, 17633);
+add ("Accessories",                3,  "Electronics",              5, "Electronics_Accessories"                          : 1, 10583);
+add ("Computers & Accessories",    4,  "Electronics",              5, "Electronics_Computers & Accessories"              : 1, 32131);
+add ("Computer Components",        5,  "Electronics",              5, "Electronics_Computer Components"                  : 1, 7370);
+add ("Accessories & Supplies",     6,  "Electronics",              5, "Electronics_Accessories & Supplies"               : 1, 13631);
+add ("Computer Accessories",       7,  "Electronics",              5, "Electronics_Computer Accessories"                 : 1, 14043);
+add ("Audio & Video Accessories",  8,  "Electronics",              5, "Electronics_Audio & Video Accessories"            : 1, 8994);
+add ("Lighting & Ceiling Fans",    1,  "Tools & Home Improvement", 6, "Tools & Home Improvement_Lighting & Ceiling Fans" : 1, 4542);
+add ("Power & Hand Tools",         2,  "Tools & Home Improvement", 6, "Tools & Home Improvement_Power & Hand Tools"      : 1, 26328);
+add ("Hand Tools",                 3,  "Tools & Home Improvement", 6, "Tools & Home Improvement_Hand Tools"              : 1, 8456);
+add ("Hardware",                   4,  "Tools & Home Improvement", 6, "Tools & Home Improvement_Hardware"                : 1, 4768);
+add ("Power Tools",                5,  "Tools & Home Improvement", 6, "Tools & Home Improvement_Power Tools"             : 1, 5138);
+add ("Power Tool Accessories",     6,  "Tools & Home Improvement", 6, "Tools & Home Improvement_Power Tool Accessories"  : 1, 9156);
+add ("Electrical",                 7,  "Tools & Home Improvement", 6, "Tools & Home Improvement_Electrical"              : 1, 4238);
+add ("Hobbies",                    1,  "Toys & Games",             7, "Toys & Games_Hobbies"                             : 1, 3630);
+add ("Games",                      2,  "Toys & Games",             7, "Toys & Games_Games"                               : 1, 5463);
+add ("Figures",                    3,  "Toys & Games",             7, "Toys & Games_Figures"                             : 1, 6903);
+add ("Sports & Outdoor Play",      4,  "Toys & Games",             7, "Toys & Games_Sports & Outdoor Play"               : 1, 3759);
+add ("Action & Toy Figures",       5,  "Toys & Games",             7, "Toys & Games_Action & Toy Figures"                : 1, 9157);
+add ("Vehicles & Remote-Control",  6,  "Toys & Games",             7, "Toys & Games_Vehicles & Remote-Control"           : 1, 3420);
+add ("Electronics for Kids",       7,  "Toys & Games",             7, "Toys & Games_Electronics for Kids"                : 1, 2639);
+add ("NO_SUB_CAT",                 8,  "Toys & Games",             7, "Toys & Games_NO_SUB_CAT"                          : 1, 4563);
+add ("Dolls & Accessories",        9,  "Toys & Games",             7, "Toys & Games_Dolls & Accessories"                 : 1, 3786);
+add ("Dolls",                      10, "Toys & Games",             7, "Toys & Games_Dolls"                               : 1, 2797);
+add ("Stuffed Animals & Plush",    11, "Toys & Games",             7, "Toys & Games_Stuffed Animals & Plush"             : 1, 4804);
+add ("Animals & Figures",          12, "Toys & Games",             7, "Toys & Games_Animals & Figures"                   : 1, 3830);
+add ("Board Games",                13, "Toys & Games",             7, "Toys & Games_Board Games"                         : 1, 2746);
+add ("Learning & Education",       14, "Toys & Games",             7, "Toys & Games_Learning & Education"                : 1, 3012);
+add ("TV",                         1,  "Movies & TV",              8, "Movies & TV_TV"                                   : 1, 63143);
+add ("Movies",                     2,  "Movies & TV",              8, "Movies & TV_Movies"                               : 1, 149887);
+add ("Fan Shop",                   1,  "Sports & Outdoors",        9, "Sports & Outdoors_Fan Shop"                       : 1, 10769);
+add ("Boating & Water Sports",     2,  "Sports & Outdoors",        9, "Sports & Outdoors_Boating & Water Sports"         : 1, 4907);
+add ("Clothing",                   3,  "Sports & Outdoors",        9, "Sports & Outdoors_Clothing"                       : 1, 13309);
+add ("Outdoor Recreation",         4,  "Sports & Outdoors",        9, "Sports & Outdoors_Outdoor Recreation"             : 1, 5274);
+add ("Camping & Hiking",           5,  "Sports & Outdoors",        9, "Sports & Outdoors_Camping & Hiking"               : 1, 5032);
+add ("Men",                        6,  "Sports & Outdoors",        9, "Sports & Outdoors_Men"                            : 1, 6550);
+add ("Team Sports",                7,  "Sports & Outdoors",        9, "Sports & Outdoors_Team Sports"                    : 1, 4676);
+add ("Accessories",                8,  "Sports & Outdoors",        9, "Sports & Outdoors_Accessories"                    : 1, 8640);
+add ("Hunting & Fishing",          9,  "Sports & Outdoors",        9, "Sports & Outdoors_Hunting & Fishing"              : 1, 8887);
+add ("Hunting",                    10, "Sports & Outdoors",        9, "Sports & Outdoors_Hunting"                        : 1, 5540);
+
+-- Minor categories for the following major category:
+create Home & Kitchen;
+set weights = 2;
+set names = ("minorCategory", "minorCategoryID", "markovChainFileName" : "uniform" ,"weighted");
+set types = (string, long, string : long, long);
+add ("Kitchen & Dining",           1, "Home & Kitchen_Kitchen & Dining"           : 1, 40462);
+add ("Furniture",                  2, "Home & Kitchen_Furniture"                  : 1, 5465);
+add ("Tabletop",                   3, "Home & Kitchen_Tabletop"                   : 1, 7839);
+add ("Bedding",                    4, "Home & Kitchen_Bedding"                    : 1, 6910);
+add ("Kitchen Utensils & Gadgets", 5, "Home & Kitchen_Kitchen Utensils & Gadgets" : 1, 7589);
+add ("Home Decor",                 6, "Home & Kitchen_Home Dcor"                  : 1, 10228);
+
+-- Minor categories for the following major category:
+create Music;
+set weights = 2;
+set names = ("minorCategory", "minorCategoryID", "markovChainFileName" : "uniform" ,"weighted");
+set types = (string, long, string : long, long);
+add ("Classical",          1,  "Music_Classical"         : 1, 69557);
+add ("Blues",              2,  "Music_Blues"             : 1, 31622);
+add ("Pop",                3,  "Music_Pop"               : 1, 349275);
+add ("R&B",                4,  "Music_R&B"               : 1, 53602);
+add ("World Music",        5,  "Music_World Music"       : 1, 97596);
+add ("Jazz",               6,  "Music_Jazz"              : 1, 77875);
+add ("Dance & Electronic", 7,  "Music_Dance & Electronic": 1, 64961);
+add ("Miscellaneous",      8,  "Music_Miscellaneous"     : 1, 49847);
+add ("Rap & Hip-Hop",      9,  "Music_Rap & Hip-Hop"     : 1, 31036);
+add ("Country",            10, "Music_Country"           : 1, 32719);
+add ("Rock",               11, "Music_Rock"              : 1, 191877);
+add ("Folk",               12, "Music_Folk"              : 1, 36162);
+add ("Hard Rock & Metal",  13, "Music_Hard Rock & Metal" : 1, 41427);
+add ("Latin Music",        14, "Music_Latin Music"       : 1, 32131);
+add ("Alternative Rock",   15, "Music_Alternative Rock"  : 1, 84283);
+add ("Classic Rock",       16, "Music_Classic Rock"      : 1, 36366);
+
+-- Minor categories for the following major category:
+create Books;
+set weights = 2;
+set names = ("minorCategory", "minorCategoryID", "markovChainFileName" : "uniform" ,"weighted");
+set types = (string, long, string : long, long);
+add ("Literature & Fiction",    1, "Books_Literature & Fiction"    : 1, 195050);
+add ("NO_SUB_CAT",              2, "Books_NO_SUB_CAT"              : 1, 233917);
+add ("Education & Reference",   3, "Books_Education & Reference"   : 1, 153495);
+add ("New",                     4, "Books_New"                     : 1, 133440);
+add ("Used & Rental Textbooks", 5, "Books_Used & Rental Textbooks" : 1, 133440);
+
+-- Minor categories for the following major category:
+create Clothing & Accessories;
+set weights = 2;
+set names = ("minorCategory", "minorCategoryID", "markovChainFileName" : "uniform" ,"weighted");
+set types = (string, long, string : long, long);
+add ("Men",                   1,  "Clothing & Accessories_Men"                   : 1, 25255);
+add ("Tops & Tees",           2,  "Clothing & Accessories_Tops & Tees"           : 1, 7672);
+add ("Dress Shirts",          3,  "Clothing & Accessories_Dress Shirts"          : 1, 4730);
+add ("Women",                 4,  "Clothing & Accessories_Women"                 : 1, 16316);
+add ("Intimates",             5,  "Clothing & Accessories_Intimates"             : 1, 6476);
+add ("Accessories",           6,  "Clothing & Accessories_Accessories"           : 1, 6014);
+add ("Active",                7,  "Clothing & Accessories_Active"                : 1, 4418);
+add ("NO_SUB_CAT",            8,  "Clothing & Accessories_NO_SUB_CAT"            : 1, 11977);
+add ("Novelty & Special Use", 9,  "Clothing & Accessories_Novelty & Special Use" : 1, 11679);
+add ("Bras",                  10, "Clothing & Accessories_Bras"                  : 1, 3871);
+add ("Pants",                 11, "Clothing & Accessories_Pants"                 : 1, 4302);
+
+-- Minor categories for the following major category:
+create Electronics;
+set weights = 2;
+set names = ("minorCategory", "minorCategoryID", "markovChainFileName" : "uniform" ,"weighted");
+set types = (string, long, string : long, long);
+add ("Portable Audio & Video",    1, "Electronics_Portable Audio & Video"    : 1, 7809);
+add ("Camera & Photo",            2, "Electronics_Camera & Photo"            : 1, 17633);
+add ("Accessories",               3, "Electronics_Accessories"               : 1, 10583);
+add ("Computers & Accessories",   4, "Electronics_Computers & Accessories"   : 1, 32131);
+add ("Computer Components",       5, "Electronics_Computer Components"       : 1, 7370);
+add ("Accessories & Supplies",    6, "Electronics_Accessories & Supplies"    : 1, 13631);
+add ("Computer Accessories",      7, "Electronics_Computer Accessories"      : 1, 14043);
+add ("Audio & Video Accessories", 8, "Electronics_Audio & Video Accessories" : 1, 8994);
+
+-- Minor categories for the following major category:
+create Tools & Home Improvement;
+set weights = 2;
+set names = ("minorCategory", "minorCategoryID", "markovChainFileName" : "uniform" ,"weighted");
+set types = (string, long, string : long, long);
+add ("Lighting & Ceiling Fans", 1, "Tools & Home Improvement_Lighting & Ceiling Fans" : 1, 4542);
+add ("Power & Hand Tools",      2, "Tools & Home Improvement_Power & Hand Tools"      : 1, 26328);
+add ("Hand Tools",              3, "Tools & Home Improvement_Hand Tools"              : 1, 8456);
+add ("Hardware",                4, "Tools & Home Improvement_Hardware"                : 1, 4768);
+add ("Power Tools",             5, "Tools & Home Improvement_Power Tools"             : 1, 5138);
+add ("Power Tool Accessories",  6, "Tools & Home Improvement_Power Tool Accessories"  : 1, 9156);
+add ("Electrical",              7, "Tools & Home Improvement_Electrical"              : 1, 4238);
+
+-- Minor categories for the following major category:
+create Toys & Games;
+set weights = 2;
+set names = ("minorCategory", "minorCategoryID", "markovChainFileName" : "uniform" ,"weighted");
+set types = (string, long, string : long, long);
+add ("Hobbies",                   1,  "Toys & Games_Hobbies"                   : 1, 3630);
+add ("Games",                     2,  "Toys & Games_Games"                     : 1, 5463);
+add ("Figures",                   3,  "Toys & Games_Figures"                   : 1, 6903);
+add ("Sports & Outdoor Play",     4,  "Toys & Games_Sports & Outdoor Play"     : 1, 3759);
+add ("Action & Toy Figures",      5,  "Toys & Games_Action & Toy Figures"      : 1, 9157);
+add ("Vehicles & Remote-Control", 6,  "Toys & Games_Vehicles & Remote-Control" : 1, 3420);
+add ("Electronics for Kids",      7,  "Toys & Games_Electronics for Kids"      : 1, 2639);
+add ("NO_SUB_CAT",                8,  "Toys & Games_NO_SUB_CAT"                : 1, 4563);
+add ("Dolls & Accessories",       9,  "Toys & Games_Dolls & Accessories"       : 1, 3786);
+add ("Dolls",                     10, "Toys & Games_Dolls"                     : 1, 2797);
+add ("Stuffed Animals & Plush",   11, "Toys & Games_Stuffed Animals & Plush"   : 1, 4804);
+add ("Animals & Figures",         12, "Toys & Games_Animals & Figures"         : 1, 3830);
+add ("Board Games",               13, "Toys & Games_Board Games"               : 1, 2746);
+add ("Learning & Education",      14, "Toys & Games_Learning & Education"      : 1, 3012);
+
+-- Minor categories for the following major category:
+create Movies & TV;
+set weights = 2;
+set names = ("minorCategory", "minorCategoryID", "markovChainFileName" : "uniform" ,"weighted");
+set types = (string, long, string : long, long);
+add ("TV",     1, "Movies & TV_TV"     : 1, 63143);
+add ("Movies", 2, "Movies & TV_Movies" : 1, 149887);
+
+-- Minor categories for the following major category:
+create Sports & Outdoors;
+set weights = 2;
+set names = ("minorCategory", "minorCategoryID", "markovChainFileName" : "uniform" ,"weighted");
+set types = (string, long, string : long, long);
+add ("Fan Shop",               1,  "Sports & Outdoors_Fan Shop"               : 1, 10769);
+add ("Boating & Water Sports", 2,  "Sports & Outdoors_Boating & Water Sports" : 1, 4907);
+add ("Clothing",               3,  "Sports & Outdoors_Clothing"               : 1, 13309);
+add ("Outdoor Recreation",     4,  "Sports & Outdoors_Outdoor Recreation"     : 1, 5274);
+add ("Camping & Hiking",       5,  "Sports & Outdoors_Camping & Hiking"       : 1, 5032);
+add ("Men",                    6,  "Sports & Outdoors_Men"                    : 1, 6550);
+add ("Team Sports",            7,  "Sports & Outdoors_Team Sports"            : 1, 4676);
+add ("Accessories",            8,  "Sports & Outdoors_Accessories"            : 1, 8640);
+add ("Hunting & Fishing",      9,  "Sports & Outdoors_Hunting & Fishing"      : 1, 8887);
+add ("Hunting",                10, "Sports & Outdoors_Hunting"                : 1, 5540);

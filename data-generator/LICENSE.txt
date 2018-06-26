@@ -1,0 +1,214 @@
+
+SOFTWARE LICENSE AGREEMENT
+
+READ THE TERMS AND CONDITIONS OF THIS AGREEMENT ("AGREEMENT") CAREFULLY BEFORE
+INSTALLING, ACCESSING, OR OBTAINING THE SOFTWARE DESCRIBED BELOW. 
+BY INSTALLING, ACCESSING OR OBTAINING THE SOFTWARE AND USING THE SOFTWARE, YOU
+AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO THE 
+TERMS OF THE AGREEMENT, DO NOT INSTALL, ACCESS, OBTAIN OR USE THE SOFTWARE.
+THE SOFTWARE MAY NOT BE USED BY UNLICENSED PERSONS OR ENTITIES.
+
+This is a legal agreement between you, ("You" or "User" or "Licensee") and
+bankmark UG (haftungsbeschraenkt). This Agreement states the terms and conditions
+upon which bankmark UG (haftungsbeschraenkt) offers to non-exclusively license the 
+"Parallel Data Generation Framework" software together with all related 
+documentation and accompanying items including, but not limited to, executable 
+programs, drivers, libraries and data files associated with such programs (the 
+"Software" or "PDGF"), and online, electronic or printed documentation ("Materials").
+
+LICENSE
+
+1. Grant. The Software and Materials are licensed, not sold, to You for use only
+under the terms of this Agreement. As between You and bankmark UG (haftungsbeschraenkt)
+(and, to the extent applicable, its licensors), bankmark UG (haftungsbeschraenkt)
+retains all title to and ownership of the Software and Materials and reserves all 
+rights not expressly granted to You.
+
+2. User. The Software may be used on any systems under the direct control of the
+Licensee. Multiple copies may be downloaded or copied for purposes of replication
+as long as the intended use complies with the terms of this license. You may make
+exact copies of the original of the Software. The original and copies thereof, and
+the Materials, may be used only by anyone who lawfully obtained "PDGF" in connection
+with the BigBench Benchmark or a benchmark derived from the BigBench Benchmark and
+accepts the terms and conditions of this Agreement. The BigBench Benchmark is a big
+data analytics benchmark.
+
+3. Scope of Use. Use of the Materials and the Software is limited to the generation
+of data regarding measurement and analysis of computer system (hardware and software)
+performance using the Software to produce BigBench Benchmark results or results for a
+benchmark derived from the BigBench Benchmark, and for internal, academic, and research
+purposes.  
+
+4. "Parallel Data Generation Framework" ("PDGF"). You may not modify the "Parallel
+Data Generation Framework" Software provided by the bankmark UG (haftungsbeschraenkt).
+The "PDGF" Software, provided as part of the BigBench Benchmark or a benchmark derived
+from the BigBench Benchmark, contains proprietary code of the bankmark UG 
+(haftungsbeschraenkt). The licence limits the permitted use of the "PDGF" to only 
+generate the benchmark data for the BigBench Benchmark or a benchmark derived from the
+BigBench Benchmark.
+To the Licensee the following terms and conditions apply for this part of the Software:
+You have the right to run the provided Software, for the purpose of generating the 
+benchmark data for the BigBench Benchmark or a benchmark derived from the BigBench
+Benchmark only. You may not extend, modify, decompile, or disassemble this Software.
+You have no right to redistribute the Software, on its own, merged into or integrated
+with any other software or documentation than the BigBench Benchmark or a benchmark 
+derived from the BigBench Benchmark. You are granted the right to redistribute the 
+Software bundled with the BigBench Benchmark or with a benchmark that is derived from
+the BigBench Benchmark.
+The "PDGF" part of the BigBench Benchmark or a benchmark derived from the BigBench 
+Benchmark and its Materials are owned by bankmark UG (haftungsbeschraenkt), and are
+protected by German copyright laws and international treaty provisions. You may not 
+remove the copyright notice from any copy of the Software or any copy of the Materials.
+  
+5. License Modification. Requests for modification of this license shall be addressed
+to info@bankmark.de.
+
+6. Copyright. The Software and Materials are owned by bankmark UG (haftungsbeschraenkt)
+and are protected by German copyright laws and international treaty provisions. You 
+may not remove the copyright notice from any copy of the Software or any copy of the
+Materials.
+
+7. Use of Name. It is acknowledged that bankmark UG (haftungsbeschraenkt) claims
+ownership in all trademark and trade name rights in the names used by bankmark UG
+(haftungsbeschraenkt) in the Software and the Materials. User shall preserve any
+notices regarding such ownership. User may only use such trademarks and names
+owned by bankmark UG (haftungsbeschraenkt) in accordance with the trademark usage
+guidelines of the bankmark UG (haftungsbeschraenkt) (available via e-mail:
+info@bankmark.de).
+
+8. Merger or Integration. Any portion of the Software merged into or integrated
+with other software or documentation will continue to be subject to the terms and
+conditions of this Agreement.
+
+9. No grants of sublicense. You may not sublicense the "PDGF" Software provided.
+
+10. Term and Termination.
+
+  10.1 Term. The license granted to You is effective until terminated.
+
+  10.2 Termination.
+
+    (a) By You. You may terminate this Agreement at any time by returning the
+        Software and Materials (including any portions or copies thereof) to 
+        bankmark UG (haftungsbeschraenkt) or providing written notice to the 
+        bankmark UG (haftungsbeschraenkt) that all copies of such Software and
+        Materials have been deleted or destroyed.
+
+    (b) By bankmark UG (haftungsbeschraenkt). This license is granted to You for
+        an unlimited period of time. In the event You materially fail to comply
+        with any term or condition of this Agreement, and You fail to remedy such
+        non-compliance within fourteen (14) days after the receipt of notice to 
+        that effect, then bankmark UG (haftungsbeschraenkt) shall have the right 
+        to terminate this Agreement immediately upon written notice without prejudice
+        to any other rights or remedies at the end of such fourteen (14)-day period.
+ 
+  10.3 Effect of Termination. Upon termination and at bankmark UG 
+  (haftungsbeschraenkt)'s written request, You agree to either (i) return the Software
+  (including any portions or copies thereof) to bankmark UG (haftungsbeschraenkt) or
+  (ii) immediately destroy all copies of the Software and Materials and inform the
+  bankmark UG (haftungsbeschraenkt) of the destruction of the Software and Materials.
+  Upon termination, bankmark UG (haftungsbeschraenkt) may also enforce any rights 
+  provided by law. You shall not be entitled to derive any rights and claims against 
+  bankmark UG (haftungsbeschraenkt) by the continued use of the Software upon termination
+  of this Agreement. The provisions of this Agreement that protect the proprietary
+  rights of bankmark UG (haftungsbeschraenkt) will continue in force after termination.
+
+11. No Warranty; Software and Materials "As Is". bankmark UG (haftungsbeschraenkt)
+MAKES NO WARRANTIES WHATSOEVER, EXPRESS OR IMPLIED, RELATING TO THE DISTRIBUTION, 
+USE OR PERFORMANCE OF THE SOFTWARE OR THE MATERIALS, (THE "WORK" FOR PURPOSES OF 
+THIS SECTION) INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY OR 
+FITNESS FOR A PARTICULAR USE OR PURPOSE. 
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE INFORMATION CONTAINED HEREIN
+IS PROVIDED "AS IS" AND WITH ALL FAULTS, AND THE AUTHORS AND DEVELOPERS OF THE WORK
+HEREBY DISCLAIM ALL OTHER WARRANTIES AND CONDITIONS, EITHER EXPRESS, IMPLIED OR 
+STATUTORY, INCLUDING, BUT NOT LIMITED TO, ANY (IF ANY) IMPLIED WARRANTIES, DUTIES 
+OR CONDITIONS OF MERCHANTABILITY, OF FITNESS FOR A PARTICULAR PURPOSE, OF ACCURACY
+OR COMPLETENESS OF RESPONSES, OF RESULTS, OF WORKMANLIKE EFFORT, OF LACK OF VIRUSES,
+AND OF LACK OF NEGLIGENCE, ALSO, THERE IS NO WARRANTY OR CONDITION OF TITLE, QUIET
+ENJOYMENT, QUIET POSSESSION, CORRESPONDENCE TO DESCRIPTION OR NON-INFRINGEMENT WITH
+REGARD TO THE WORK.
+
+USER RECOGNIZES THAT THE SOFTWARE AND MATERIALS ARE THE RESULT OF A COOPERATIVE,
+NON-PROFIT EFFORT. USER ACCEPTS THE SOFTWARE AND MATERIALS "AS IS" AND WITHOUT ANY
+WARRANTY, EXPRESS OR IMPLIED.
+
+Without limitation, bankmark UG (haftungsbeschraenkt) does not warrant that the
+functions contained in the Software or Materials will meet Your requirements or
+that the operation of the Software will be uninterrupted, error-free or free
+from malicious code. For purposes of this paragraph, "malicious code" means
+any program code designed to contaminate other computer programs or computer 
+data, consume computer resources, modify, destroy, record, or transmit data, or
+in some other fashion usurp the normal operation of the computer, computer system,
+or computer network, including viruses, Trojan horses, droppers, worms, logic
+bombs, and the like.
+
+bankmark UG (haftungsbeschraenkt) shall not be liable for the accuracy of any
+information provided by bankmark UG (haftungsbeschraenkt) or third-party technical
+support personnel, or any damages caused, either directly or indirectly, by acts
+taken or omissions made by You as a result of such technical support. 
+
+You assume full responsibility for the selection of the Software to achieve Your
+intended results, and for the installation, use and results obtained from the 
+Software. You also assume the entire risk as it applies to the quality and
+performance of the Software. Should the Software prove defective, You (and not
+bankmark UG (haftungsbeschraenkt) assume the entire liability of any and all
+necessary servicing, repair or correction.
+
+This warranty gives You specific legal rights, and You may also have other rights
+which may vary based on your location. Some countries/states do not allow the
+exclusion of implied warranties, so the above exclusion may not apply to You. 
+bankmark UG (haftungsbeschraenkt) disclaims all warranties of any kind if the 
+Software was customized, repackaged or altered in any way by any third party 
+other than bankmark UG (haftungsbeschraenkt).
+
+12. Disclaimer of Liability. bankmark UG (haftungsbeschraenkt) assumes no 
+liability with respect to the Software and Materials, including liability for 
+infringement of intellectual property rights, negligence, or any other liability.
+bankmark UG (haftungsbeschraenkt) is not aware of any infringement of copyright
+or patent that may result from its transfer to User of the Software and Materials.
+If User receives any notice of infringement, such notice shall be immediately 
+communicated to bankmark UG (haftungsbeschraenkt) who will take immediate action
+to evaluate the claim and, if practicable, modify the Software and Materials as 
+necessary to avoid infringement. In the event that bankmark UG (haftungsbeschraenkt)
+determines that the Software and Materials cannot be modified to avoid such 
+infringement (or any other infringement claim communicated to bankmark UG 
+(haftungsbeschraenkt), bankmark UG (haftungsbeschraenkt) may terminate this 
+Agreement immediately. User shall suspend use of the Software and Materials until
+modifications to avoid claims of infringement have been completed. User waives any
+claim against bankmark UG (haftungsbeschraenkt) in the event of such infringement 
+claims by others.
+
+13. Limitation of Remedies And Damages. IN NO EVENT WILL bankmark UG
+(haftungsbeschraenkt) BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL OR 
+CONSEQUENTIAL DAMAGES OR FOR ANY LOST PROFITS, LOST SAVINGS, LOST REVENUES OR
+LOST DATA ARISING FROM OR RELATING TO THE SOFTWARE OR THIS AGREEMENT, EVEN IF
+bankmark UG (haftungsbeschraenkt) HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGES. IN NO EVENT WILL bankmark UG (haftungsbeschraenkt)'s LIABILITY OR 
+DAMAGES TO YOU OR ANY OTHER PERSON EVER EXCEED U.S. ONE HUNDRED DOLLARS (US $100),
+REGARDLESS OF THE FORM OF THE CLAIM. IN NO EVENT WILL LICENSEE'S LIABILITY OR 
+DAMAGES TO bankmark UG (haftungsbeschraenkt) OR ANY OTHER PERSON EVER EXCEED 
+US $1,000,000, REGARDLESS OF THE FORM OF THE CLAIM. Some countries/states do not
+allow the limitation or exclusion of liability for incidental or consequential
+damages, so the above limitation or exclusion may not apply to You.
+
+14. Contractor/Manufacturer. The Contractor/Manufacturer for the Software is:
+
+  bankmark UG (haftungsbeschraenkt)
+  Bahnhofstrasse 10
+  94032 Passau, Germany
+
+15. General. This Agreement is binding on You as well as your employees, 
+employers, contractors and agents, and on any successors and assignees. 
+This Agreement is governed by the laws of the Federal Republic of 
+Germany without respect to any provisions of the Federal Republic of Germany
+law that would cause application of the law of another country. This Agreement
+shall not be governed by the United Nations Convention on Contracts for the 
+International Sale of Goods (CISG), the application of which is expressly excluded.
+Place of jurisdiction shall be Passau, Germany. This Agreement is the entire 
+agreement between us and supersedes any other understandings or agreements with
+respect to the Software; if any provision of this Agreement is deemed invalid or 
+unenforceable by any country or government agency having jurisdiction, that 
+particular provision will be deemed modified to the extent necessary to make 
+the provision valid and enforceable, and the remaining provisions will remain
+in full force and effect.

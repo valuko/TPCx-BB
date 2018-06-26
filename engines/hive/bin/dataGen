@@ -1,0 +1,232 @@
+#!/usr/bin/env bash
+
+#
+# Copyright (C) 2016 Transaction Processing Performance Council (TPC) and/or
+# its contributors.
+#
+# This file is part of a software package distributed by the TPC.
+#
+# The contents of this file have been developed by the TPC, and/or have been
+# licensed to the TPC under one or more contributor license agreements.
+#
+#  This file is subject to the terms and conditions outlined in the End-User
+#  License Agreement (EULA) which can be found in this distribution (EULA.txt)
+#  and is available at the following URL:
+#  http://www.tpc.org/TPC_Documents_Current_Versions/txt/EULA.txt
+#
+# Unless required by applicable law or agreed to in writing, this software
+# is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+# ANY KIND, either express or implied, and the user bears the entire risk as
+# to quality and performance as well as the entire cost of service or repair
+# in case of defect.  See the EULA for more details.
+#
+
+#
+#Copyright 2015 Intel Corporation All Rights Reserved. 
+#
+#The source code contained or described herein and all documents related to the source code ("Material") are owned by Intel Corporation or its suppliers or licensors. Title to the Material remains with Intel Corporation or its suppliers and licensors. The Material contains trade secrets and proprietary and confidential information of Intel or its suppliers and licensors. The Material is protected by worldwide copyright and trade secret laws and treaty provisions. No part of the Material may be used, copied, reproduced, modified, published, uploaded, posted, transmitted, distributed, or disclosed in any way without Intel's prior express written permission.
+#
+#No license under any patent, copyright, trade secret or other intellectual property right is granted to or conferred upon you by disclosure or delivery of the Materials, either expressly, by implication, inducement, estoppel or otherwise. Any license under such intellectual property rights must be express and approved by Intel in writing.
+
+helpModule () {
+  echo "This module generates a dataset with the PDGF data generator using hadoop"
+  echo
+  echo "Options:"
+  echo -e "-f\tscale factor for data set. -f 1 == 1GB -f 1000 == 1TB"
+  echo -e "-h\tshow this help"
+  echo -e "-m\tmap tasks for data generation. A good value is: NUMBER_OF_YARN_CONTAINERS-1 or NUMBER_OF_CLUSTER_VCORES-1. This setting only influences the data generation."
+}
+
+runModule () {
+  # make sure that this method stops when an error occured
+  BIG_BENCH_STOP_AFTER_FAILURE="1"
+
+  if [ -z "$BIG_BENCH_MAP_TASKS" ]
+  then
+    echo "dataGen requires -m option, number of map tasks. You have to set this appropiratly to your cluster. A good value is: NUMBER_OF_YARN_CONTAINERS-1 or NUMBER_OF_CLUSTER_VCORES-1. "
+    return 1
+  fi
+
+  local HadoopClusterExecOptions="-mapTasks $BIG_BENCH_MAP_TASKS"
+
+  if [ -n "$BIG_BENCH_SCALE_FACTOR" ]
+  then
+    local PDGF_OPTIONS="-sf $BIG_BENCH_SCALE_FACTOR"
+  fi
+
+  echo "PDGFOptions: $PDGF_OPTIONS $@"
+  echo "HadoopClusterExecOptions: $HadoopClusterExecOptions"
+
+  local PDGF_ARCHIVE_NAME="pdgfEnvironment.tar"
+  local PDGF_DISTRIBUTED_NODE_DIR="$PDGF_ARCHIVE_NAME/data-generator/"
+  local PDGF_ARCHIVE_PATH="`mktemp -d`/$PDGF_ARCHIVE_NAME"
+
+  if grep -q "IS_EULA_ACCEPTED=true" "$BIG_BENCH_DATA_GENERATOR_DIR/Constants.properties"
+  then
+    echo "EULA is accepted"
+  else
+    echo "==============================================="
+    echo "data generator EULA"
+    echo "==============================================="
+    echo "This is your first run of the data generation tool. Please accept the EULA."
+    "$BIG_BENCH_JAVA" -jar "$BIG_BENCH_DATA_GENERATOR_DIR/pdgf.jar" -ns -c
+    if grep -q "IS_EULA_ACCEPTED=true" "$BIG_BENCH_DATA_GENERATOR_DIR/Constants.properties"
+    then
+      echo "OK"
+    else
+      echo "ERROR! data generation tool EULA is not accepted. Cannot procced"
+      return 1 
+    fi
+  fi
+
+  # delete any previously generated data
+  #echo "==============================================="
+  #echo "Deleting any previously generated data."
+  #echo "==============================================="
+  #runCmdWithErrorCheck "${BIG_BENCH_BIN_DIR}/bigBench" cleanData $LIST_OF_USER_OPTIONS
+  #"${BIG_BENCH_BIN_DIR}/bigBench" cleanData $LIST_OF_USER_OPTIONS
+  echo "OK"
+  echo "==============================================="
+  echo "make hdfs benchmark data dir: ${BIG_BENCH_HDFS_ABSOLUTE_INIT_DATA_DIR}"
+  echo "==============================================="
+  runCmdWithErrorCheck hadoop fs -mkdir -p "${BIG_BENCH_HDFS_ABSOLUTE_INIT_DATA_DIR}"
+  runCmdWithErrorCheck hadoop fs -chmod 777 "${BIG_BENCH_HDFS_ABSOLUTE_INIT_DATA_DIR}"
+
+  hadoop fs -ls "${BIG_BENCH_HDFS_ABSOLUTE_INIT_DATA_DIR}"
+
+  echo "OK"
+  echo "==============================================="
+  echo "make hdfs benchmark data dir: ${BIG_BENCH_HDFS_ABSOLUTE_REFRESH_DATA_DIR}"
+  echo "==============================================="
+  runCmdWithErrorCheck hadoop fs -mkdir -p "${BIG_BENCH_HDFS_ABSOLUTE_REFRESH_DATA_DIR}"
+  runCmdWithErrorCheck hadoop fs -chmod 777 "${BIG_BENCH_HDFS_ABSOLUTE_REFRESH_DATA_DIR}"
+
+  hadoop fs -ls "${BIG_BENCH_HDFS_ABSOLUTE_REFRESH_DATA_DIR}"
+  echo "OK"
+
+
+  echo "==============================================="
+  echo "Creating data generator archive to upload to DistCache"
+  echo "==============================================="
+  echo "creating: $PDGF_ARCHIVE_PATH"
+  rm -f "$PDGF_ARCHIVE_PATH"
+  runCmdWithErrorCheck tar -C "$BIG_BENCH_HOME" -caf "$PDGF_ARCHIVE_PATH" data-generator/
+  echo "OK"
+
+  echo "==============================================="
+  echo "Starting distributed hadoop data generation job with: $HadoopClusterExecOptions"
+  echo "Temporary result data in hdfs: ${BIG_BENCH_HDFS_ABSOLUTE_INIT_DATA_DIR} (you can change the data generation target folder in  the /setEnvVars configuration file with the BIG_BENCH_HDFS_ABSOLUTE_INIT_DATA_DIR property)"
+  echo "logs: ${BIG_BENCH_DATAGEN_STAGE_LOG}"
+  echo "==============================================="
+  local HADOOP_CP="`hadoop classpath`"
+  echo "HADOOP CLASSPATH: $HADOOP_CP"
+
+  local PDGF_CLUSTER_CONF="-Dpdgf.log.folder=/tmp/pdgfLog/HadoopClusterExec.taskNumber -Dcore-site.xml=${BIG_BENCH_DATAGEN_CORE_SITE} -Dhdfs-site.xml=${BIG_BENCH_DATAGEN_HDFS_SITE} -Djava.library.path=${BIG_BENCH_HADOOP_LIBS_NATIVE} -DFileChannelProvider=pdgf.util.caching.fileWriter.HDFSChannelProvider -Ddfs.replication.override=${BIG_BENCH_DATAGEN_DFS_REPLICATION}"
+  echo "PDGF_CLUSTER_CONF: $PDGF_CLUSTER_CONF"
+
+  echo "create $BIG_BENCH_LOGS_DIR folder"
+  mkdir -p "$BIG_BENCH_LOGS_DIR"
+
+  local LOG_FILE_EXEC_TIMES="${BIG_BENCH_LOGS_DIR}/times.csv"
+  if [ ! -e "$LOG_FILE_EXEC_TIMES" ]
+  then
+    touch "$LOG_FILE_EXEC_TIMES"
+    echo "STARTDATE_EPOCH|STOPDATE_EPOCH|DURATION_MS|STARTDATE|STOPDATE|DURATION|QUERY|SCALE_FACTOR|BENCHMARK_PHASE|STREAM|SUCCESSFUL|EXIT_CODE|HAS_RESULT|HDFS_SIZE" >> "${LOG_FILE_EXEC_TIMES}"
+  fi
+
+  if [ ! -w "$LOG_FILE_EXEC_TIMES" ]
+  then
+    echo "ERROR: cannot write to: $LOG_FILE_EXEC_TIMES, no permission"
+    return 1
+  fi
+
+  #=====EXEC: GENERATE BASE DATA =======
+  #-- start time measurement --
+  STARTDATE="`date +%Y/%m/%d:%H:%M:%S`"
+  STARTDATE_EPOCH="`date +%s`" # seconds since epoch
+
+  # debug output of command
+  echo hadoop jar "${BIG_BENCH_TOOLS_DIR}/HadoopClusterExec.jar" -archives "${PDGF_ARCHIVE_PATH}" ${BIG_BENCH_DATAGEN_HADOOP_EXEC_DEBUG} -taskFailOnNonZeroReturnValue -execCWD "${PDGF_DISTRIBUTED_NODE_DIR}" ${HadoopClusterExecOptions} -exec ${BIG_BENCH_DATAGEN_HADOOP_JVM_ENV} -cp "${HADOOP_CP}:pdgf.jar" ${PDGF_CLUSTER_CONF} pdgf.Controller -nc HadoopClusterExec.tasks -nn HadoopClusterExec.taskNumber -ns -c -sp REFRESH_PHASE 0 -o "'${BIG_BENCH_HDFS_ABSOLUTE_INIT_DATA_DIR}/'+table.getName()+'/'" ${BIG_BENCH_DATAGEN_HADOOP_OPTIONS} -s ${BIG_BENCH_DATAGEN_TABLES} ${PDGF_OPTIONS} "$@"
+
+  #exec the data generation
+  runCmdWithErrorCheck hadoop jar "${BIG_BENCH_TOOLS_DIR}/HadoopClusterExec.jar" -archives "${PDGF_ARCHIVE_PATH}" ${BIG_BENCH_DATAGEN_HADOOP_EXEC_DEBUG} -taskFailOnNonZeroReturnValue -execCWD "${PDGF_DISTRIBUTED_NODE_DIR}" ${HadoopClusterExecOptions} -exec ${BIG_BENCH_DATAGEN_HADOOP_JVM_ENV} -cp "${HADOOP_CP}:pdgf.jar" ${PDGF_CLUSTER_CONF} pdgf.Controller -nc HadoopClusterExec.tasks -nn HadoopClusterExec.taskNumber -ns -c -sp REFRESH_PHASE 0 -o "'${BIG_BENCH_HDFS_ABSOLUTE_INIT_DATA_DIR}/'+table.getName()+'/'" ${BIG_BENCH_DATAGEN_HADOOP_OPTIONS} -s ${BIG_BENCH_DATAGEN_TABLES} ${PDGF_OPTIONS} "$@" 2>&1 | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+  EXIT_CODE=${PIPESTATUS[0]}
+
+  if [ "$EXIT_CODE" -eq 0 ]
+  then
+    local successOrFail="SUCCESS"
+  else
+    local successOrFail="FAILED"
+  fi
+
+  STOPDATE="`date +%Y/%m/%d:%H:%M:%S`"
+  STOPDATE_EPOCH="`date +%s`" # seconds since epoch
+  DIFF_s="$(($STOPDATE_EPOCH - $STARTDATE_EPOCH))"
+  DIFF_ms="$(($DIFF_s * 1000))"
+  DURATION="$(($DIFF_s / 3600))h $((($DIFF_s % 3600) / 60))m $(($DIFF_s % 60))s"
+
+  echo "======= Generating base data time ============" tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+  echo "----- time -----" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+  echo "Start timestamp: $STARTDATE $STARTDATE_EPOCH" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+  echo "Stop  timestamp: $STOPDATE $STOPDATE_EPOCH" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+  echo "Duration: $DURATION" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+
+  echo "datagen_base successOrFail${successOrFail} exit code: ${EXIT_CODE}" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+  echo "${STARTDATE_EPOCH}|${STOPDATE_EPOCH}|${DIFF_ms}|${STARTDATE}|${STOPDATE}|${DURATION}|dataGen_base|${BIG_BENCH_SCALE_FACTOR}|${BIG_BENCH_BENCHMARK_PHASE}|${BIG_BENCH_STREAM_NUMBER}|${successOrFail}|${EXIT_CODE}||" >> "${LOG_FILE_EXEC_TIMES}"
+
+  echo "time&status: ${LOG_FILE_EXEC_TIMES}" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+  echo "full log: $BIG_BENCH_DATAGEN_STAGE_LOG" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+
+  #=====EXEC: GENERATE REFRESH DATA =======
+  #-- start time measurement --
+  STARTDATE="`date +%Y/%m/%d:%H:%M:%S`"
+  STARTDATE_EPOCH="`date +%s`" # seconds since epoch
+  STARTDATE="`date +%Y/%m/%d:%H:%M:%S`"
+  STARTDATE_EPOCH="`date +%s`" # seconds since epoch
+  
+  # debug output of command 
+  echo hadoop jar "${BIG_BENCH_TOOLS_DIR}/HadoopClusterExec.jar" -archives "${PDGF_ARCHIVE_PATH}" ${BIG_BENCH_DATAGEN_HADOOP_EXEC_DEBUG} -taskFailOnNonZeroReturnValue -execCWD "${PDGF_DISTRIBUTED_NODE_DIR}" ${HadoopClusterExecOptions} -exec ${BIG_BENCH_DATAGEN_HADOOP_JVM_ENV} -cp "${HADOOP_CP}:pdgf.jar" ${PDGF_CLUSTER_CONF} pdgf.Controller -nc HadoopClusterExec.tasks -nn HadoopClusterExec.taskNumber -ns -c -sp REFRESH_PHASE 1 -o "'${BIG_BENCH_HDFS_ABSOLUTE_REFRESH_DATA_DIR}/'+table.getName()+'/'" ${BIG_BENCH_DATAGEN_HADOOP_OPTIONS} -s ${BIG_BENCH_DATAGEN_TABLES} ${PDGF_OPTIONS} "$@"
+  
+  #exec the data generation
+  runCmdWithErrorCheck hadoop jar "${BIG_BENCH_TOOLS_DIR}/HadoopClusterExec.jar" -archives "${PDGF_ARCHIVE_PATH}" ${BIG_BENCH_DATAGEN_HADOOP_EXEC_DEBUG} -taskFailOnNonZeroReturnValue -execCWD "${PDGF_DISTRIBUTED_NODE_DIR}" ${HadoopClusterExecOptions} -exec ${BIG_BENCH_DATAGEN_HADOOP_JVM_ENV} -cp "${HADOOP_CP}:pdgf.jar" ${PDGF_CLUSTER_CONF} pdgf.Controller -nc HadoopClusterExec.tasks -nn HadoopClusterExec.taskNumber -ns -c -sp REFRESH_PHASE 1 -o "'${BIG_BENCH_HDFS_ABSOLUTE_REFRESH_DATA_DIR}/'+table.getName()+'/'" ${BIG_BENCH_DATAGEN_HADOOP_OPTIONS} -s ${BIG_BENCH_DATAGEN_TABLES} ${PDGF_OPTIONS} "$@" 2>&1 | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1 
+  EXIT_CODE=${PIPESTATUS[0]}
+
+  STOPDATE="`date +%Y/%m/%d:%H:%M:%S`"
+  STOPDATE_EPOCH="`date +%s`" # seconds since epoch
+  DIFF_s="$(($STOPDATE_EPOCH - $STARTDATE_EPOCH))"
+  DIFF_ms="$(($DIFF_s * 1000))"
+  DURATION="$(($DIFF_s / 3600))h $((($DIFF_s % 3600) / 60))m $(($DIFF_s % 60))s"
+  
+  echo "======= Generating refresh data time =========" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+  echo "Start timestamp: $STARTDATE $STARTDATE_EPOCH" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+  echo "Stop  timestamp: $STOPDATE $STOPDATE_EPOCH" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+  echo "Duration:  $DURATION" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+  if [ "$EXIT_CODE" -ne 0 ]
+  then
+    echo "datagen_refresh FAILED exit code: ${EXIT_CODE}" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1 
+    echo "${STARTDATE_EPOCH}|${STOPDATE_EPOCH}|${DIFF_ms}|${STARTDATE}|${STOPDATE}|${DURATION}|dataGen_refresh|${BIG_BENCH_BENCHMARK_PHASE}|${BIG_BENCH_STREAM_NUMBER}|FAIL|${EXIT_CODE}" >> "${LOG_FILE_EXEC_TIMES}"
+  else
+    echo "datagen_refresh SUCCESSFUL" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+    echo "${STARTDATE_EPOCH}|${STOPDATE_EPOCH}|${DIFF_ms}|${STARTDATE}|${STOPDATE}|${DURATION}|dataGen_refresh|${BIG_BENCH_BENCHMARK_PHASE}|${BIG_BENCH_STREAM_NUMBER}|SUCCESS|${EXIT_CODE}" >> "${LOG_FILE_EXEC_TIMES}"
+  fi
+  echo "time&status: ${LOG_FILE_EXEC_TIMES}" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+  echo "full log: $BIG_BENCH_DATAGEN_STAGE_LOG" | tee -a "$BIG_BENCH_DATAGEN_STAGE_LOG" 2>&1
+  
+  ##cleanup
+  rm -f "${PDGF_ARCHIVE_PATH}"
+
+  echo "==============================================="
+  echo "Verify data sizes"
+  echo "==============================================="
+  hadoop fs -du -h "${BIG_BENCH_HDFS_ABSOLUTE_INIT_DATA_DIR}"
+  hadoop fs -du -h "${BIG_BENCH_HDFS_ABSOLUTE_REFRESH_DATA_DIR}"
+
+  echo "==============================================="
+  echo "Hadoop data generation job finished. "
+  echo "logs: ${BIG_BENCH_DATAGEN_STAGE_LOG}"
+  echo "View generated files: hadoop fs -ls ${BIG_BENCH_HDFS_ABSOLUTE_INIT_DATA_DIR}"
+  echo "View generated refresh files: hadoop fs -ls ${BIG_BENCH_HDFS_ABSOLUTE_REFRESH_DATA_DIR}"
+  echo "==============================================="
+  echo "==============================================="
+  return $EXIT_CODE
+}

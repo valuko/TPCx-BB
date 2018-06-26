@@ -1,0 +1,5 @@
+FINISHED,
+but produces no result for sf1.
+Selected date ranges for store and web sales do not yield results, where the same item_sk turns up in both views: 'wr_items' and 'sr_items'.
+Thus the 'return_items' table (a join of 'wr_times' and 'sr_items' on item_sk) is empty.
+
